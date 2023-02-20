@@ -3,6 +3,11 @@ body {
     padding: 0;
 }
 
+.visible {
+    visibility: visible!important;
+    /* ik krijg die transition maar niet aan de praat */
+}
+
 .dot {
     height: 25px;
     width: 25px;
@@ -40,23 +45,52 @@ nav {
     border: 2px #ffffff solid;
 }
 
-.popup {
+#popup {
+    padding: 10px;
     background-color: #CC7B2B;
     transform: translate(-50%, -50%);
     position: absolute;
     top: 30%;
     left: 50%;
-    visibility: visible;
+    visibility: hidden;
     border-radius: 50%;
+    /* ik krijg die transition maar niet aan de praat */
 }
+
 
 .big-circle {
     display: flex;
-    justify-content: center;
-    padding-top: 6px;
+    flex-wrap: wrap;
     width: 300px;
     height: 300px;
-    flex-wrap: wrap;
     border-radius: 50%;
     border: 2px #ffffff solid;
+}
+
+.circle-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.big-circle > a:nth-of-type(1){
+    position: relative;
+    left: 1%;
+    top: 40%;
+}
+.big-circle > a:nth-of-type(2){
+    position: relative;
+    left: 24%;
+    top: 82%;
+}
+.big-circle > a:nth-of-type(3){
+    position: relative;
+    left: 49%;
+    top: 40%;
+}
+.big-circle > a:nth-of-type(4){
+    position: relative;
+    left: -8%;
+    top: 1%;
 }
