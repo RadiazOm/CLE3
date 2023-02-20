@@ -153,8 +153,8 @@ body
 .contentBx .card .imgBx1
 {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
     overflow: hidden;
 }
