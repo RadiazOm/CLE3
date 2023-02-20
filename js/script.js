@@ -1,3 +1,4 @@
+// variables
 let imgBx = document.querySelectorAll('.imgBx');
 let contentBx = document.querySelectorAll('.contentBx');
 
