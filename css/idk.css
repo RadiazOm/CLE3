@@ -1,0 +1,32 @@
+h2, p {
+    text-align: center;
+}
+
+.myblock {
+    margin: auto;
+    width: fit-content;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    background-color: #d3d3d3;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+.button1 {background-color: black;}
+.button2 {background-color: black;}
+
+.title{
+    margin: 20px;
+}
