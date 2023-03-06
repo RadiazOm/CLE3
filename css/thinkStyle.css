@@ -129,6 +129,12 @@ nav {
     padding: 10px;
 }
 
+#translated {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 textarea {
     text-align: initial;
     background: transparent;
@@ -150,6 +156,15 @@ textarea {
 img {
     width: 200px;
     height: auto;
+}
+
+.space {
+    margin-inline: 20px;
+}
+
+.sign {
+    width: 70px;
+    height: 100px;
 }
 
 input[type='submit'] {

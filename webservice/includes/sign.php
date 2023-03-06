@@ -2,11 +2,11 @@
 
 function getSignLibrary() {
     return [
-        "a" => "A",
-        "b" => "B",
-        "c" => "C",
-        "d" => "D",
-        "e" => "E",
+        "a" => "a.png",
+        "b" => "b.png",
+        "c" => "c.png",
+        "d" => "d.png",
+        "e" => "e.png",
         "f" => "F",
         "g" => "G",
         "h" => "H",

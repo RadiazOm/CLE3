@@ -3,7 +3,8 @@ window.addEventListener('load', init)
 let form;
 let input;
 let output;
-let errorMessage
+let errorMessage;
+let data;
 
 function init() {
     form = document.getElementById('input-field');
@@ -16,13 +17,32 @@ function init() {
 }
 
 function configureData(e) {
-    console.log(e)
+    data = e;
+    console.log(data)
 }
 
 function formClickHandler(e) {
     e.preventDefault();
-    output.innerHTML = input.value;
-    console.log(data)
+    let array = input.value.split("");
+    output.innerHTML = "";
+    for (const letter of array) {
+        if (letter === " ") {
+            let space = document.createElement('div')
+            space.classList.add('space')
+            output.appendChild(space)
+        } else if (data.hasOwnProperty(letter)) {
+            let img = document.createElement('img')
+            img.src = `media/signs/${data[letter]}`
+            img.classList.add('sign')
+            output.appendChild(img)
+        } else {
+            output.innerHTML = 'Input has unknown character, please remove it'
+        }
+    }
+
+
+
+    // output.innerHTML = input.value;
 }
 
 function getJSONdata(apiUrl, successHandler)
