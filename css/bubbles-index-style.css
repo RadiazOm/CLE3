@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #383961;
+}
+
+/*cards*/
+
+.card-container{
+    position: relative;
+    display: flex;
+    padding: 80px 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 80px;
+}
+
+.card{
+    position: relative;
+    width: 350px;
+    height: 180px;
+    background: #fff;
+    transition: 0.5s;
+}
+
+.card:hover{
+    height: 450px;
+}
+
+.card .card-lines{
+    position: absolute;
+    inset: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.card .card-lines::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 120px;
+    background: linear-gradient(transparent, #6699CC ,#6699CC, #6699CC, transparent);
+    animation: animate-card 4s linear infinite;
+    animation-play-state: paused;
+}
+
+.card .card-lines::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #181E4E;
+}
+
+.card:hover .card-lines::before{
+    animation-play-state: running;
+}
+
+.card .card-imgBx{
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translatex(-50%);
+    background: #000;
+    transition: 0.5s;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover .card-imgBx{
+    top: 25px;
+    width: 200px;
+    height: 200px;
+}
+
+.card .card-imgBx:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(transparent, #FDC601 ,#FDC601, #FDC601, transparent);
+    animation: animate-card2 6s linear infinite;
+    animation-play-state: paused;
+}
+
+.card:hover .card-imgBx:before{
+    animation-play-state: running;
+}
+
+@keyframes animate-card {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes animate-card2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+.card .card-imgBx::after{
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #181E4E;
+}
+
+.card .card-imgBx img{
+    position: absolute;
+    width: 100px;
+    z-index: 1;
+    filter: invert(1);
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.card:hover .card-imgBx img{
+    opacity: 1;
+}
+
+.card .card-content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.card .card-content .card-details{
+    padding: 75px 20px;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(145px);
+}
+
+.card:hover .card-content .card-details{
+    transform: translateY(0px);
+}
+
+.card .card-content .card-details h2{
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #6699CC;
+}
+
+.card .card-content .card-details p{
+    color: #fff;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card:hover .card-content .card-details p{
+    opacity: 1;
+}
+
+.card .card-content .card-details a{
+    display: inline-block;
+    padding: 8px 15px;
+    background: #6699CC;
+    color: #181E4E;
+    margin-top: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card:hover .card-content .card-details a,
+.card:hover .card-content .card-details p{
+    opacity: 1;
+}
+
+.visible {
+    visibility: visible!important;
+    /* ik krijg die transition maar niet aan de praat */
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    background-color: #CC7B2B;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.rounded-edges {
+    border: 2px #ffffff solid;
+    border-top: 0;
+    width: 200px;
+    border-bottom-left-radius: 120px;
+    border-bottom-right-radius: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+    width: 70px;
+    height: 70px;
+    flex-wrap: wrap;
+    border-radius: 50%;
+    border: 2px #ffffff solid;
+}
+
+#popup {
+    padding: 10px;
+    background-color: #CC7B2B;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    visibility: hidden;
+    border-radius: 50%;
+    /* ik krijg die transition maar niet aan de praat */
+}
+
+
+.big-circle {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px #ffffff solid;
+}
+
+.circle-link {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.big-circle > a:nth-of-type(1){
+    position: relative;
+    left: 1%;
+    top: 40%;
+}
+.big-circle > a:nth-of-type(2){
+    position: relative;
+    left: 24%;
+    top: 82%;
+}
+.big-circle > a:nth-of-type(3){
+    position: relative;
+    left: 49%;
+    top: 40%;
+}
+.big-circle > a:nth-of-type(4){
+    position: relative;
+    left: -8%;
+    top: 1%;
+}
