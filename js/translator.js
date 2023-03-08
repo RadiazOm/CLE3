@@ -23,7 +23,7 @@ function configureData(e) {
 
 function formClickHandler(e) {
     e.preventDefault();
-    let array = input.value.split("");
+    let array = input.value.toLowerCase().split("");
     output.innerHTML = "";
     for (const letter of array) {
         if (letter === " ") {
