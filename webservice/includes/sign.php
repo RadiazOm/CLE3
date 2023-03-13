@@ -28,6 +28,5 @@ function getSignLibrary() {
         "x" => "x.png",
         "y" => "y.png",
         "z" => "z.png",
-
     ];
 }
