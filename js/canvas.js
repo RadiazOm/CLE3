@@ -39,15 +39,17 @@ window.addEventListener("mouseup", (e) => draw = false)
 window.addEventListener("mousemove", (e) => {
     // If this is the first mouse movement event, set the previous mouse positions to the current mouse positions
     // if draw == false we won't draw
+    //- canvas.width/2 because we're using window.innerHeight(and width) /2 for the canvas size
     if(prevX == null || prevY == null || !draw){
-        prevX = e.clientX
+        prevX = e.clientX - canvas.width /2
         prevY = e.clientY
         return
     }
 
     //declare (local)variable for current mouse position and get the current mouse positions
     //its a variable and not a constante because it changes
-    let currentX = e.clientX
+    //- canvas.width/2 because we're using window.innerHeight(and width) /2 for the canvas size
+    let currentX = e.clientX - canvas.width /2
     let currentY = e.clientY
 
     // Start a new line and move to the previous mouse position
