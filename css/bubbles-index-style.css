@@ -12,6 +12,49 @@ main {
     background: #383961;
 }
 
+.hero3 {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(
+    rgba(0,0,0,.5),
+    rgba(0,0,0,.8)
+    ), url("../media/img1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: left top;
+    height: 450px;
+}
+.hero3-text {
+    position: relative;
+    text-align: center;
+    top: 35%;
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+}
+h1{
+    font-size: 46px;
+    text-transform: uppercase;
+    letter-spacing: 2.6px;
+    font-family: 'Gotu', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .hero3-text {
+        top: 10px;
+        margin: auto;
+    }
+    h1{
+        font-size: 30px;
+    }
+    p{
+        font-size: 18px;
+    }
+    button{
+        font-size: 16px;
+    }
+}
 /*cards*/
 
 .card-container{
