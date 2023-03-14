@@ -23,10 +23,14 @@ function FillHTML(e) {
     h1.innerHTML = data.mainTitle;
     titleSport.appendChild(h1);
 
+    let generalTitle = document.createElement("h1")
+    generalTitle.innerHTML = data.firstParagraphTitle;
+    generalSport.appendChild(generalTitle);
 
-    // generalSport = document.createElement("firstParagraphTitle")
-    // firstParagraphTitle.innerHTML = data.firstParagraphTitle;
-    // titleSport.appendChild(firstParagraphTitle);
+    let generalText = document.createElement("p")
+    generalText.innerHTML = data.firstParagraph
+    generalSport.appendChild(generalText)
+
 
 
 
@@ -51,7 +55,7 @@ function getJSONdata(apiUrl, successHandler)
             }
             return response.json();
         })
-        .then(successHandler)m
+        .then(successHandler)
         .catch(ajaxErrorHandler);
 }
 
