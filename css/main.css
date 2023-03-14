@@ -1,0 +1,78 @@
+/* General stuff such as no body margin and white font colour */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #383961;
+    color: white;
+    font-family: "Roboto Thin", sans-serif;
+    font-size: 20px;
+}
+
+.title {
+    font-size: 48px;
+    border-bottom: 10px solid #FDC601;
+}
+
+/* This class serves as purpose to generalise a blue box in which contents should be placed */
+.box-blue {
+    background-color: #533175;
+    box-shadow: -10px -10px #283A71;
+    padding: 20px;
+}
+
+/* This class serves as purpose to generalise a orange box in which contents should be placed */
+.box-orange {
+    background-color: #DF8022;
+    box-shadow: -10px -10px #B06A24;
+    padding: 20px;
+}
+
+/* This class makes text the biggest */
+.text-1 {
+    font-size: 58px;
+}
+
+/* This class makes text 10px smaller than the one above */
+.text-2 {
+    font-size: 48px;
+}
+
+/* This class makes text 10px smaller than the one above */
+.text-3 {
+    font-size: 38px;
+}
+
+/* This class makes text 10px smaller than the one above */
+.text-4 {
+    font-size: 28px;
+}
+
+/* This class makes text the smallest */
+.text-5 {
+    font-size: 20px;
+}
+
+/* This class centers an element to the middle of the screen */
+.center {
+    margin: 10px auto;
+}
+
+/* This class centers an element to the middle of the screen with half its size */
+.center-half {
+    width: 50%;
+    margin: 10px auto;
+}
+
+/* This class centers an element to the middle of the screen with a quarter of its size */
+.center-quarter {
+    width: 25%;
+    margin: 10px auto;
+}
+
+.half {
+    width: 50%;
+}
+
+.quarter {
+    width: 25%;
+}
