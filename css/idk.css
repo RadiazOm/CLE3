@@ -8,14 +8,14 @@ h1{
     color: white;
 }
 
-.general{
+#generalSport{
     color: white;
     font-size: 21px;
     margin-top: 100px;
     margin-bottom: 70px;
 }
 
-.popular{
+#popularSport{
     text-align: right;
     color: white;
     font-size: 21px;
@@ -24,7 +24,7 @@ h1{
 
 }
 
-.communication{
+#communicationSport{
     color: white;
     font-size: 21px;
     margin-top: 100px;
@@ -32,7 +32,7 @@ h1{
 
 }
 
-.title{
+#titleSport{
     font-size: 25px;
 
 }

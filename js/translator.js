@@ -13,12 +13,11 @@ function init() {
     errorMessage = document.getElementById('error')
 
     form.addEventListener('submit', formClickHandler)
-    getJSONdata(`webservice/index.php`, configureData)
+    getJSONdata(`webservice/index.php?id=1`, configureData)
 }
 
 function configureData(e) {
     data = e;
-    console.log(data)
 }
 
 function formClickHandler(e) {
