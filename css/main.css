@@ -27,6 +27,31 @@ body {
     border-radius: 4px;
 }
 
+.logo {
+    width: 100px;
+    height: 100%;
+    margin-inline: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #CC7B2B;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.footer {
+    background-color: #CC7B2B;
+    padding: 40px;
+    margin-top: 150px;
+}
+
+.container {
+    margin: 25px;
+}
+
 .field-blue {
     background-color: #383961;
     margin: 5px;
@@ -42,7 +67,7 @@ body {
 /* This class serves as purpose to generalise a blue box in which contents should be placed */
 .box-blue {
     background-color: #533175;
-    box-shadow: -10px -10px #283A71;
+    box-shadow: -15px -15px #1f265b;
     padding: 20px;
 }
 
@@ -59,20 +84,6 @@ body {
 
 .orange-background {
     background-color: #CC7B2B;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background-color: #CC7B2B;
-    padding: 5px;
-    margin-bottom: 50px;
-}
-
-.footer {
-    background-color: #CC7B2B;
-    padding: 40px;
 }
 
 /* This class makes text the biggest */
@@ -144,6 +155,23 @@ nav {
     justify-content: space-between;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+/* centers text */
 .text-center {
     text-align: center;
 }
@@ -156,4 +184,18 @@ nav {
 /* a quarter of its size */
 .quarter {
     width: 25%;
+}
+
+/* an eight of its size */
+.eight {
+    width: 12.5%;
+}
+
+@media only screen and (max-width: 560px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+
+
 }
