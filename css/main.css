@@ -53,6 +53,28 @@ body {
     padding: 20px;
 }
 
+.blue-background {
+    background-color: #68418E;
+}
+
+.orange-background {
+    background-color: #CC7B2B;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #CC7B2B;
+    padding: 5px;
+    margin-bottom: 50px;
+}
+
+.footer {
+    background-color: #CC7B2B;
+    padding: 40px;
+}
+
 /* This class makes text the biggest */
 .text-1 {
     font-size: 58px;
@@ -78,21 +100,52 @@ body {
     font-size: 20px;
 }
 
-/* This class centers an element to the middle of the screen */
-.center {
+/* This class centers an element to the middle of the screen using margin */
+.margin-center {
     margin: 10px auto;
 }
 
-/* This class centers an element to the middle of the screen with half its size */
-.center-half {
+/* This class centers an element to the middle of the screen with half its size using margin */
+.margin-center-half {
     width: 50%;
     margin: 10px auto;
 }
 
-/* This class centers an element to the middle of the screen with a quarter of its size */
-.center-quarter {
+/* This class centers an element to the middle of the screen with a quarter of its size using margin */
+.margin-center-quarter {
     width: 25%;
     margin: 10px auto;
+}
+
+.flex-center {
+    display: flex!important;
+    justify-content: center;
+}
+
+.flex-center-half {
+    display: flex!important;
+    justify-content: center;
+    width: 50%;
+}
+
+.flex-center-quarter {
+    display: flex!important;
+    justify-content: center;
+    width: 25%;
+}
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* half its size */
