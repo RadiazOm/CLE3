@@ -1,10 +1,11 @@
-/* General stuff such as no body margin and white font colour */
+/* General stuff such as no body margin and background color*/
 body {
     margin: 0;
     padding: 0;
     background-color: #383961;
 }
 
+/* General stuff such as white color and font size */
 * {
     color: white;
     font-family: "Roboto Thin", sans-serif!important;
@@ -18,6 +19,7 @@ body {
     width: fit-content!important;
 }
 
+/* general button styling */
 .button {
     width: 150px;
     height: 50px;
@@ -27,12 +29,15 @@ body {
     border-radius: 4px;
 }
 
+/* styling for img logo */
 .logo {
     width: 100px;
     height: 100%;
     margin-inline: 20px;
+    object-fit: cover;
 }
 
+/* styling for the navbar */
 .navbar {
     display: flex;
     justify-content: center;
@@ -42,22 +47,26 @@ body {
     margin-bottom: 25px;
 }
 
+/* styling for the footer */
 .footer {
     background-color: #CC7B2B;
     padding: 40px;
     margin-top: 150px;
 }
 
+/* general class which contains stuff */
 .container {
     margin: 25px;
 }
 
+/* used inside the .box-blue element to make a blue field */
 .field-blue {
     background-color: #383961;
     margin: 5px;
     padding: 5px;
 }
 
+/* used inside the .box-orange element to make a blue field */
 .field-orange {
     background-color: #CC7B2B;
     margin: 5px;
@@ -78,10 +87,12 @@ body {
     padding: 20px;
 }
 
+/* used to make a blue background */
 .blue-background {
     background-color: #68418E;
 }
 
+/* used to make a orange background */
 .orange-background {
     background-color: #CC7B2B;
 }
@@ -128,44 +139,51 @@ body {
     margin: 10px auto;
 }
 
+/* centers an element using flex */
 .flex-center {
     display: flex!important;
     justify-content: center;
 }
 
+/* centers an element using flex and making it half its size */
 .flex-center-half {
     display: flex!important;
     justify-content: center;
     width: 50%;
 }
 
+/* centers an element using flex and making it a quarter its size */
 .flex-center-quarter {
     display: flex!important;
     justify-content: center;
     width: 25%;
 }
 
+/* divides 2 elements with space around them */
 .flex-around {
     display: flex;
     justify-content: space-around;
 }
 
+/* divides 2 elements with space between them */
 .flex-between {
     display: flex;
     justify-content: space-between;
 }
 
+/* arranges elements in a column */
 .flex-column {
     display: flex;
     flex-direction: column;
 }
 
+/* Whenever there are too elements to fit next to eachother it overflows to the next row/column */
 .flex-wrap {
     display: flex;
     flex-wrap: wrap;
 }
 
-
+/* aligns content in the center veritcally(if it isnt flex-direction: column) */
 .align-center {
     display: flex;
     align-items: center;
@@ -191,11 +209,7 @@ body {
     width: 12.5%;
 }
 
+/* stuff for when shit gets too small */
 @media only screen and (max-width: 560px) {
-    .container{
-        display: flex;
-        flex-direction: column;
-    }
-
 
 }
