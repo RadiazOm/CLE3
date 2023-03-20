@@ -1,18 +1,18 @@
 window.addEventListener('load', init);
 
-let form;
+let button;
 let input;
 let output;
 let errorMessage;
 let data;
 
 function init() {
-    form = document.getElementById('input-field');
+    button = document.getElementById('button');
     input = document.getElementById('input');
     output = document.getElementById('translated');
     errorMessage = document.getElementById('error');
 
-    form.addEventListener('submit', formClickHandler);
+    button.addEventListener('click', formClickHandler);
     getJSONdata(`webservice/index.php?id=1`, configureData);
 }
 
@@ -21,7 +21,6 @@ function configureData(e) {
 }
 
 function formClickHandler(e) {
-    e.preventDefault();
     let array = input.value.toLowerCase().split("");
     output.innerHTML = "";
     for (const letter of array) {

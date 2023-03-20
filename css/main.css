@@ -47,6 +47,16 @@ body {
     margin-bottom: 25px;
 }
 
+/* Makes the input field not so ugly */
+.input-field {
+    margin: 0!important;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
 /* styling for the footer */
 .footer {
     background-color: #CC7B2B;
@@ -62,15 +72,17 @@ body {
 /* used inside the .box-blue element to make a blue field */
 .field-blue {
     background-color: #383961;
-    margin: 5px;
+    height: 100%;
     padding: 5px;
+    box-sizing: border-box;
 }
 
 /* used inside the .box-orange element to make a blue field */
 .field-orange {
     background-color: #CC7B2B;
-    margin: 5px;
+    height: 100%;
     padding: 5px;
+    box-sizing: border-box;
 }
 
 /* This class serves as purpose to generalise a blue box in which contents should be placed */
@@ -78,6 +90,7 @@ body {
     background-color: #533175;
     box-shadow: -15px -15px #1f265b;
     padding: 20px;
+    width: 85%;
 }
 
 /* This class serves as purpose to generalise a orange box in which contents should be placed */
@@ -85,6 +98,7 @@ body {
     background-color: #DF8022;
     box-shadow: -10px -10px #B06A24;
     padding: 20px;
+    width: 85%;
 }
 
 /* used to make a blue background */
@@ -177,13 +191,19 @@ body {
     flex-direction: column;
 }
 
-/* Whenever there are too elements to fit next to eachother it overflows to the next row/column */
+/* arranges elements in a row */
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Whenever there are too many elements to fit next to another it overflows to the next row/column */
 .flex-wrap {
     display: flex;
     flex-wrap: wrap;
 }
 
-/* aligns content in the center veritcally(if it isnt flex-direction: column) */
+/* aligns content in the center vertically(if it isn't flex-direction: column) */
 .align-center {
     display: flex;
     align-items: center;
@@ -213,3 +233,25 @@ body {
 @media only screen and (max-width: 560px) {
 
 }
+
+/* From here on out these classes are only used in specific scenarios and are meant for specific circumstances only */
+/* ---------------------------------------------------------------------------------------------------------------- */
+/* Write your own classes here */
+
+/* Translator specific classes */
+/* --------------------------- */
+/* Translator specific classes */
+
+.space {
+    margin-inline: 20px;
+}
+
+.sign {
+    width: 70px;
+    height: 100px;
+}
+
+/* End of translator specific classes */
+/* ---------------------------------- */
+/* End of translator specific classes */
+
