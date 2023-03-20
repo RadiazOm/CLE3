@@ -1,14 +1,98 @@
+/*Set margin and padding to 0 for the entire body element*/
 body {
     margin: 0;
     padding: 0;
 }
 
+/*Set the #wrapper element to display as a flex container,
+ center the items both horizontally and vertically*/
 #wrapper {
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
+/*Add a 2px solid black border to canvas element(s)*/
 canvas {
-    border: 2px red solid;
+    border: 2px black solid;
+}
+
+/*Set margin and padding to 0 for all elements on the page*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Style the color navigation bar with
+a fixed position at the top of the page,
+centered horizontally
+and spaced evenly between its items*/
+.colornav{
+    width: 310px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    opacity: .3;
+    transition: opacity .5s;
+}
+
+/*Increase the opacity of the color navigation bar on hover*/
+.colornav:hover{
+    opacity: 1;
+}
+
+/*Style each color button with a 30px height and width,
+blue background, border radius,
+and a 3px solid gray border
+*/
+.clr{
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    border-radius: 50%;
+    border: 3px solid rgb(214, 214, 214);
+    transition: transform .5s;
+}
+
+/*Add a scaling transition on hover*/
+.clr:hover{
+    transform: scale(1.2);
+}
+
+/*Set the background color for each color button,
+based on their respective nth-child positions*/
+.clr:nth-child(1){
+    background-color: #000;
+}
+.clr:nth-child(2){
+    background-color: #EF626C;
+}
+.clr:nth-child(3){
+    background-color: #fdec03;
+}
+.clr:nth-child(4){
+    background-color: #24d102;
+}
+.clr:nth-child(5){
+    background-color: #fff;
+}
+
+/* */
+button{
+    border: none;
+    outline: none;
+    padding: .6em 1em;
+    border-radius: 3px;
+    background-color: #03bb56;
+    color: #fff;
+}
+
+/* */
+.save{
+    background-color: #0f65d4;
 }
