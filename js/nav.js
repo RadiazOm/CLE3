@@ -1,12 +1,12 @@
 window.addEventListener('load', init)
 
-let popup
-let button
+let popup;
+let navButton;
 
 function init() {
-    popup = document.getElementById('popup')
-    button = document.getElementById('nav-button')
-    button.addEventListener('click', elementClicked)
+    popup = document.getElementById('nav-popup')
+    navButton = document.getElementById('nav-button')
+    navButton.addEventListener('click', elementClicked)
 }
 
 function elementClicked(e) {
