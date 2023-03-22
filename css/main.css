@@ -47,6 +47,7 @@ body {
     margin-bottom: 25px;
 }
 
+/* styling for the nav popup */
 .nav-popup {
     position: absolute;
     top: 140px;
@@ -56,10 +57,12 @@ body {
     visibility: hidden;
 }
 
+/* made so the javascript can add this class at will */
 .visible {
     visibility: visible!important;
 }
 
+/* good image button styling */
 .img-link {
     object-fit: cover;
     width: 100px;
@@ -68,6 +71,7 @@ body {
     border-radius: 50%;
 }
 
+/* ignore this it aint working */
 .img-link:before {
     content: " ";
     position: absolute;
@@ -79,7 +83,7 @@ body {
     border: 5px solid #ffea00;
 }
 
-
+/* css magic to style each image button separately */
 .nav-popup >  a:nth-of-type(1) > .img-link {
     position: absolute;
     transform: translate(-50%, -50%);
@@ -125,13 +129,13 @@ body {
 
 /* used inside the .box-blue element to make a blue field */
 .field-blue {
-    background-color: #383961;
+    background-color: #283A71;
     height: 100%;
     padding: 5px;
     box-sizing: border-box;
 }
 
-/* used inside the .box-orange element to make a blue field */
+/* used inside the .box-orange element to make a orange field */
 .field-orange {
     background-color: #CC7B2B;
     height: 100%;
@@ -139,15 +143,16 @@ body {
     box-sizing: border-box;
 }
 
-/* This class serves as purpose to generalise a blue box in which contents should be placed */
+/* blue box with a 3d effect */
+/* ???? i dont get it */
 .box-blue {
-    background-color: #533175;
-    box-shadow: -15px -15px #1f265b;
+    background-color: #68418E;
+    box-shadow: -15px -15px #533175;
     padding: 20px;
     width: 85%;
 }
 
-/* This class serves as purpose to generalise a orange box in which contents should be placed */
+/* orange box with a 3d effect */
 .box-orange {
     background-color: #DF8022;
     box-shadow: -10px -10px #B06A24;
@@ -156,6 +161,8 @@ body {
 }
 
 /* used to make a blue background */
+/* ???? blue bg is purple? */
+/* am colorblind :( */
 .blue-background {
     background-color: #68418E;
 }
@@ -308,4 +315,12 @@ body {
 /* End of translator specific classes */
 /* ---------------------------------- */
 /* End of translator specific classes */
+
+/* Drawingtool specific classes */
+/* --------------------------- */
+/* Drawingtool specific classes */
+
+/* End of Drawingtool specific classes */
+/* ---------------------------------- */
+/* End of Drawingtool specific classes */
 
