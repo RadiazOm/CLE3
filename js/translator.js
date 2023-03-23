@@ -46,6 +46,7 @@ function buttonClickHandler() {
     createImages(inputValue);
 }
 
+// whenever the save button is clicked save the current input into its own quick button
 function saveButtonClickHandler() {
     let inputValue = input.value;
 
@@ -54,6 +55,7 @@ function saveButtonClickHandler() {
     createQuickButton(inputValue);
 }
 
+// whenever a quick button is clicked we do do some checks to bypass faulty html built by me and change the text and images of the translator
 function quickButtonsClickHandler(e) {
     let element = e.target;
     if (element.classList.contains('favorite-button') || element.parentElement.classList.contains('favorite-button')) {
@@ -73,6 +75,7 @@ function quickButtonsClickHandler(e) {
 
 }
 
+// creates button to be clicked upon which then translates the text within to sign language in an instant
 function createQuickButton(value) {
 
     let button = document.createElement('button');
@@ -109,12 +112,13 @@ function createImages(sentence) {
     }
 }
 
-// adds the current prompt to the localstorage
+// adds the quick button to the localstorage
 function addItemToLocalStorage(item) {
     quickButtons.push(item);
     localStorage.setItem('quickButtons', JSON.stringify(quickButtons));
 }
 
+// removes the quick button from local storage
 function removeItemFromLocalStorage(item) {
     if (Number.isInteger(item)) {
         quickButtons.splice(item, 1)
