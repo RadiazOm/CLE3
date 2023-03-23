@@ -1,11 +1,14 @@
 window.addEventListener('load', init);
 
+
+// global variables
 let button;
 let input;
 let output;
 let errorMessage;
 let data;
 
+// initialize data after HTML document has fully loaded
 function init() {
     button = document.getElementById('button');
     input = document.getElementById('input');
@@ -16,14 +19,28 @@ function init() {
     getJSONdata(`webservice/index.php?id=1`, configureData);
 }
 
+// whenever AJAX call is successful we can configure our data
 function configureData(e) {
     data = e;
+    let lastPrompt = localStorage.getItem('lastPrompt');
+    if (lastPrompt !== null) {
+        createImages(lastPrompt);
+        input.innerHTML = lastPrompt;
+    }
 }
 
+// whenever someone clicks on the "Go!" button gather the data from the inut field and create images
 function formClickHandler(e) {
     let array = input.value.toLowerCase().split("");
     output.innerHTML = "";
-    for (const letter of array) {
+    addItemToLocalStorage(input.value);
+    createImages(array);
+}
+
+// using the data from the JSON file we can determine which images corespond to which letter, using that we can loop trough
+// every lettter in the sentence and add an image on the other side.
+function createImages(sentence) {
+    for (const letter of sentence) {
         if (letter === " ") {
             let space = document.createElement('div')
             space.classList.add('space');
@@ -37,10 +54,14 @@ function formClickHandler(e) {
             output.innerHTML = 'Input has unknown character, please remove it';
         }
     }
-
-    // output.innerHTML = input.value;
 }
 
+// adds the current prompt to the localstorage
+function addItemToLocalStorage(item) {
+    localStorage.setItem('lastPrompt', item);
+}
+
+// gets the JSON data asynchronously
 function getJSONdata(apiUrl, successHandler)
 {
     fetch(apiUrl)
@@ -54,6 +75,7 @@ function getJSONdata(apiUrl, successHandler)
         .catch(ajaxErrorHandler);
 }
 
+// whenever AJAX breaks send this error message
 function ajaxErrorHandler(data)
 {
     let error = document.createElement('div');
