@@ -313,6 +313,7 @@ body {
 }
 
 .favorite-button {
+    position: relative;
     height: 50px;
     margin: 10px;
     text-align: center;
@@ -324,10 +325,11 @@ body {
 
 .delete{
     position: absolute;
+    top: 0;
+    right: 2px;
     font-size: 20px;
     cursor: pointer;
 }
-
 
 /* End of translator specific classes */
 /* ---------------------------------- */

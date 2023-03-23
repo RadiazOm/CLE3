@@ -41,9 +41,9 @@ function configureData(e) {
 
 // whenever someone clicks on the "Go!" button gather the data from the inut field and create images
 function buttonClickHandler() {
-    let array = input.value.toLowerCase().split("");
+    let inputValue = input.value
     output.innerHTML = "";
-    createImages(array);
+    createImages(inputValue);
 }
 
 function saveButtonClickHandler() {
@@ -63,11 +63,11 @@ function quickButtonsClickHandler(e) {
             return;
         }
         if (element.children.length === 0) {
-            console.log(element.innerHTML)
             input.value = element.innerHTML
+            createImages(element.innerHTML)
         } else {
-            console.log(element.children[0].innerHTML)
             input.value = element.children[0].innerHTML
+            createImages(element.children[0].innerHTML)
         }
     }
 
@@ -92,7 +92,8 @@ function createQuickButton(value) {
 // using the data from the JSON file we can determine which images corespond to which letter, using that we can loop trough
 // every letter in the sentence and add an image on the other side.
 function createImages(sentence) {
-    for (const letter of sentence) {
+    output.innerHTML = '';
+    for (const letter of sentence.toLowerCase()) {
         if (letter === " ") {
             let space = document.createElement('div')
             space.classList.add('space');
