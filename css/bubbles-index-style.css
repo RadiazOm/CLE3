@@ -407,3 +407,14 @@ input{
     transform: rotate(45deg);
     cursor: pointer;
 }
+input.modal-submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input.modal-delete{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
