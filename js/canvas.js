@@ -21,7 +21,7 @@ window.addEventListener('load', init);
 const canvas = document.getElementById("canvas")
 // Set the canvas height and width to the height and width of the browser window
 canvas.height = window.innerHeight /2
-canvas.width = window.innerWidth / 2
+canvas.width = window.innerWidth /2
 //the canvascontext constante gets the 2D context of the canvas, which allows us to draw on it
 //its a constante and not a variable because it never changes
 const canvascontext = canvas.getContext("2d")
@@ -40,7 +40,7 @@ function init()
     canvascontext.strokeStyle = "white";
 }
 
-//Next piece of code is for selecting the color you want to draw with.
+    //Next piece of code is for selecting the color you want to draw with.
 // It selects all elements with the class "color" from the document(drawingtool.html),
 // converts the resulting NodeList to an array, and adds an event listener to each element in the array.
 // When an element is clicked,
@@ -59,7 +59,7 @@ colors.forEach(color => {
     })
 })
 
-//Next piece of code is for clearing the canvas.
+    //Next piece of code is for clearing the canvas.
 // It selects the element with class "clear" from the document, adds an event listener to the element,
 // and defines the action that should be taken when the element is clicked.
 // When the "clear" button is clicked, the code clears the entire canvas by filling it with a transparent color,
@@ -98,18 +98,20 @@ window.addEventListener("mouseup", (e) => draw = false)
 window.addEventListener("mousemove", (e) => {
     // If this is the first mouse movement event, set the previous mouse positions to the current mouse positions
     // if draw == false we won't draw
-    //- canvas.width/2 because we're using window.innerHeight(and width) /2 for the canvas size
     if(prevX == null || prevY == null || !draw){
-        prevX = e.clientX - canvas.width /2
-        prevY = e.clientY
+        //offsetTop returns the distance of the outer border of the current element relative,
+        //to the inner border of the top of the offsetParent(the closest positioned ancestor element)
+        //we're using - canvas.offsetTop so we draw at the same place at the canvas, regardless off the css.
+        prevX = e.clientX - canvas.offsetLeft
+        prevY = e.clientY - canvas.offsetTop
         return
     }
 
 //declare (local)variable for current mouse position and get the current mouse positions
-//its a variable and not a constante because it changes
-//- canvas.width/2 because we're using window.innerHeight(and width) /2 for the canvas size
-let currentX = e.clientX - canvas.width /2
-let currentY = e.clientY
+    //its a variable and not a constante because it changes
+    //we're using - canvas.offsetTop so we draw at the same place at the canvas, regardless off the css.
+let currentX = e.clientX - canvas.offsetLeft
+let currentY = e.clientY - canvas.offsetTop
 
 // Start a new line and move to the previous mouse position
     canvascontext.beginPath()
@@ -122,5 +124,3 @@ let currentY = e.clientY
 prevX = currentX
 prevY = currentY
 })
-
-
