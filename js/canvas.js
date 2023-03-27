@@ -13,6 +13,7 @@
 //and provide the coordinate within the application's viewport(browser on client's screen)
 //at which the event occurred (as opposed to the coordinate within the page)
 
+//making the init fuction start
 window.addEventListener('load', init);
 
 //The canvas constante references the HTML canvas element with the ID "canvas"
@@ -21,44 +22,44 @@ const canvas = document.getElementById("canvas")
 // Set the canvas height and width to the height and width of the browser window
 canvas.height = window.innerHeight /2
 canvas.width = window.innerWidth / 2
-//the ctx constante gets the 2D context of the canvas, which allows us to draw on it
+//the canvascontext constante gets the 2D context of the canvas, which allows us to draw on it
 //its a constante and not a variable because it never changes
-const ctx = canvas.getContext("2d")
+const canvascontext = canvas.getContext("2d")
 //declare prevX and prevY variables, which are used to keep track of (to hold/store) the previous mouse positions,
 //prev=previous. its a variable and not a constante because it changes
 let prevX = null
 let prevY = null
-//The ctx.lineWidth property sets the width of the line we will draw
-ctx.lineWidth = 5
+//The canvascontext.lineWidth property sets the width of the line we will draw
+canvascontext.lineWidth = 5
 //declare variable so the webapplication knows when & when not to draw
 let draw = false
 
 function init()
 {
     //set color of stroke to white on start
-    ctx.strokeStyle = "white";
+    canvascontext.strokeStyle = "white";
 }
 
 //Next piece of code is for selecting the color you want to draw with.
-// It selects all elements with the class "clr" from the document(drawingtool.html),
+// It selects all elements with the class "color" from the document(drawingtool.html),
 // converts the resulting NodeList to an array, and adds an event listener to each element in the array.
 // When an element is clicked,
-// the code sets the stroke style of the canvas to the color value stored in the element's "data-clr" attribute.
+// the code sets the stroke style of the canvas to the color value stored in the element's "data-color" attribute.
 
-// Select all elements with class "clr" from the drawingtool.html
-let clrs = document.querySelectorAll(".clr")
+// Select all elements with class "color" from the drawingtool.html
+let colors = document.querySelectorAll(".color")
 // Convert the NodeList returned by querySelectorAll to an array
-clrs = Array.from(clrs)
+colors = Array.from(colors)
 // Add an event listener to each element in the array
-clrs.forEach(clr => {
-    // When an element is clicked, set the stroke style of the context (ctx) to the color
-    // value stored in the element's "data-clr" attribute
-    clr.addEventListener("click", () => {
-        ctx.strokeStyle = clr.dataset.clr
+colors.forEach(color => {
+    // When an element is clicked, set the stroke style of the context (canvascontext) to the color
+    // value stored in the element's "data-color" attribute
+    color.addEventListener("click", () => {
+        canvascontext.strokeStyle = color.dataset.color
     })
 })
 
-//This code next piece of code is for clearing the canvas.
+//Next piece of code is for clearing the canvas.
 // It selects the element with class "clear" from the document, adds an event listener to the element,
 // and defines the action that should be taken when the element is clicked.
 // When the "clear" button is clicked, the code clears the entire canvas by filling it with a transparent color,
@@ -69,7 +70,24 @@ let clearBtn = document.querySelector(".clear")
 // Add an event listener to the "clear" button
 clearBtn.addEventListener("click", () => {
     // When the "clear" button is clicked, clear the entire canvas by filling it with a transparent color
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    canvascontext.clearRect(0, 0, canvas.width, canvas.height)
+})
+
+//Next piece of code is for saving drawing as image
+// find the first element with class name "save" and store it in saveBtn variable
+let saveBtn = document.querySelector(".save")
+// add a click event listener to the saveBtn
+saveBtn.addEventListener("click", () => {
+    // get the data URL of the canvas element and store it in data variable
+    let data = canvas.toDataURL("imag/png")
+    // create a new <a> element and store it in a variable named 'saveable'
+    let saveable = document.createElement("a")
+    // set the 'href' attribute of the 'saveable' element to the data URL
+    saveable.href = data
+    // set the 'download' attribute of the 'saveable' element to "drawing.png"
+    saveable.download = "drawing.png"
+    // simulate a click on the 'saveable' element to download the image file
+    saveable.click()
 })
 
 // Set draw to true when mouse is pressed
@@ -94,11 +112,11 @@ let currentX = e.clientX - canvas.width /2
 let currentY = e.clientY
 
 // Start a new line and move to the previous mouse position
-ctx.beginPath()
-ctx.moveTo(prevX, prevY)
+    canvascontext.beginPath()
+    canvascontext.moveTo(prevX, prevY)
 // Draw a line to the current mouse position and stroke it (i.e., actually draw it)
-ctx.lineTo(currentX, currentY)
-ctx.stroke()
+    canvascontext.lineTo(currentX, currentY)
+    canvascontext.stroke()
 
 // Update the previous mouse positions to be the current mouse positions
 prevX = currentX
