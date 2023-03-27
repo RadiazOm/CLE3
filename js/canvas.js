@@ -6,14 +6,14 @@
 //each piece of code is explained in depth
 
 //parts explained:
-//event listerer explained:
+//event listener explained:
 //waits for user interaction (such as a click,keypress or mouse movement) so you can run some code whenever that action happens
 //clientX & clientY explained:
 //The clientX(for horizontal) and clientY(for vertical) are read-only properties of the MouseEvent interface
 //and provide the coordinate within the application's viewport(browser on client's screen)
 //at which the event occurred (as opposed to the coordinate within the page)
 
-//making the init fuction start
+//making the init function start
 window.addEventListener('load', init);
 
 //The canvas constante references the HTML canvas element with the ID "canvas"
