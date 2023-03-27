@@ -56,9 +56,9 @@ function iconCloseHandler()
 
 function fillModal(id)
 {
-    if (id === ){
-
-    }
+    // if (id === ){
+    //
+    // }
 }
 
 
