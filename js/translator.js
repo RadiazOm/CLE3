@@ -1,29 +1,102 @@
 window.addEventListener('load', init);
 
+
+// global variables
 let button;
+let saveButton;
+let quickButtonsContainer;
+let quickButtons = [];
 let input;
 let output;
 let errorMessage;
 let data;
 
+// initialize data after HTML document has fully loaded
 function init() {
     button = document.getElementById('button');
+    saveButton = document.getElementById('save')
     input = document.getElementById('input');
     output = document.getElementById('translated');
     errorMessage = document.getElementById('error');
+    quickButtonsContainer = document.getElementById('quick-buttons');
 
-    button.addEventListener('click', formClickHandler);
+    button.addEventListener('click', buttonClickHandler);
+    saveButton.addEventListener('click', saveButtonClickHandler)
+    quickButtonsContainer.addEventListener('click', quickButtonsClickHandler)
     getJSONdata(`webservice/index.php?id=1`, configureData);
+
+    let quickButtonsJSON = JSON.parse(localStorage.getItem('quickButtons'));
+    if (quickButtonsJSON !== null) {
+        for (const quickButton of quickButtonsJSON) {
+            quickButtons.push(quickButton)
+            createQuickButton(quickButton)
+        }
+    }
 }
 
+// whenever AJAX call is successful we can configure our data
 function configureData(e) {
     data = e;
 }
 
-function formClickHandler(e) {
-    let array = input.value.toLowerCase().split("");
+// whenever someone clicks on the "Go!" button gather the data from the inut field and create images
+function buttonClickHandler() {
+    let inputValue = input.value
     output.innerHTML = "";
-    for (const letter of array) {
+    createImages(inputValue);
+}
+
+// whenever the save button is clicked save the current input into its own quick button
+function saveButtonClickHandler() {
+    let inputValue = input.value;
+
+    console.log(inputValue)
+    addItemToLocalStorage(inputValue)
+    createQuickButton(inputValue);
+}
+
+// whenever a quick button is clicked we do do some checks to bypass faulty html built by me and change the text and images of the translator
+function quickButtonsClickHandler(e) {
+    let element = e.target;
+    if (element.classList.contains('favorite-button') || element.parentElement.classList.contains('favorite-button')) {
+        if (element.innerHTML === 'X') {
+            element.parentElement.remove()
+            removeItemFromLocalStorage(quickButtons.indexOf(element.parentElement.children[0].innerHTML))
+            return;
+        }
+        if (element.children.length === 0) {
+            input.value = element.innerHTML
+            createImages(element.innerHTML)
+        } else {
+            input.value = element.children[0].innerHTML
+            createImages(element.children[0].innerHTML)
+        }
+    }
+
+}
+
+// creates button to be clicked upon which then translates the text within to sign language in an instant
+function createQuickButton(value) {
+
+    let button = document.createElement('button');
+    button.classList.add('favorite-button');
+    quickButtonsContainer.appendChild(button)
+
+    let text = document.createElement('p')
+    text.innerHTML = value;
+    button.appendChild(text)
+
+    let deleteButton = document.createElement('div')
+    deleteButton.classList.add('delete')
+    deleteButton.innerHTML = 'X'
+    button.appendChild(deleteButton)
+}
+
+// using the data from the JSON file we can determine which images corespond to which letter, using that we can loop trough
+// every letter in the sentence and add an image on the other side.
+function createImages(sentence) {
+    output.innerHTML = '';
+    for (const letter of sentence.toLowerCase()) {
         if (letter === " ") {
             let space = document.createElement('div')
             space.classList.add('space');
@@ -37,10 +110,25 @@ function formClickHandler(e) {
             output.innerHTML = 'Input has unknown character, please remove it';
         }
     }
-
-    // output.innerHTML = input.value;
 }
 
+// adds the quick button to the localstorage
+function addItemToLocalStorage(item) {
+    quickButtons.push(item);
+    localStorage.setItem('quickButtons', JSON.stringify(quickButtons));
+}
+
+// removes the quick button from local storage
+function removeItemFromLocalStorage(item) {
+    if (Number.isInteger(item)) {
+        quickButtons.splice(item, 1)
+    } else {
+        quickButtons.splice(quickButtons.indexOf(item), 1)
+    }
+    localStorage.setItem('quickButtons', JSON.stringify(quickButtons));
+}
+
+// gets the JSON data asynchronously
 function getJSONdata(apiUrl, successHandler)
 {
     fetch(apiUrl)
@@ -54,6 +142,7 @@ function getJSONdata(apiUrl, successHandler)
         .catch(ajaxErrorHandler);
 }
 
+// whenever AJAX breaks send this error message
 function ajaxErrorHandler(data)
 {
     let error = document.createElement('div');

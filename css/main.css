@@ -312,6 +312,25 @@ body {
     height: 100px;
 }
 
+.favorite-button {
+    position: relative;
+    height: 50px;
+    margin: 10px;
+    text-align: center;
+    font-size: 28px;
+    background-color: #24A6DE;
+    border: none;
+    border-radius: 4px;
+}
+
+.delete{
+    position: absolute;
+    top: 0;
+    right: 2px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 /* End of translator specific classes */
 /* ---------------------------------- */
 /* End of translator specific classes */
