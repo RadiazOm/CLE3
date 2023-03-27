@@ -1,49 +1,79 @@
+
 window.addEventListener('load', init);
+
+
+
 
 let titleSport;
 let generalSport;
 let popularSport;
 let communicationSport;
 
+
 function init() {
+
+
+
+    let iconClicker = document.getElementById("containerSport")
+    iconClicker.addEventListener("click", iconClickHandler);
+
+
+
     titleSport = document.getElementById("titleSport");
     generalSport = document.getElementById("generalSport");
     popularSport = document.getElementById("popularSport");
     communicationSport = document.getElementById("communicationSport");
+
     getJSONdata(`webservice/index.php?id=2`, FillHTML)
 
 
+
 }
 
-function FillHTML(e) {
+
+function iconClickHandler(e){
+
+    console.log(e.target);
+    let target = e.target;
+
+    if(target.nodeName !== 'I'){
+        return;
+    }
+
+}
+
+
+
+function FillHTML(e)
+{
+
     data = e;
     console.log(data);
 
-    let h1 = document.createElement("h1")
+    // title
+    let h1 = document.createElement("h1");
     h1.innerHTML = data.mainTitle;
     titleSport.appendChild(h1);
 
-    let generalTitle = document.createElement("h1")
-    generalTitle.innerHTML = data.firstParagraphTitle;
-    generalSport.appendChild(generalTitle);
+    // general sport
+    let generalText = document.createElement("p");
+    generalText.innerHTML = data.firstParagraph;
+    generalSport.appendChild(generalText);
 
-    let generalText = document.createElement("p")
-    generalText.innerHTML = data.firstParagraph
-    generalSport.appendChild(generalText)
-
-
-
-
+    // popular sport
+    let popularText = document.createElement("p");
+    popularText.innerHTML = data.secondParagraph;
+    popularSport.appendChild(popularText);
 
 
-    
-
+    // communication sport
+    let communicationText = document.createElement("p");
+    communicationText.innerHTML = data.thirdParagraph;
+    communicationSport.appendChild(communicationText);
 
 
 
 }
-
-
 
 
 function getJSONdata(apiUrl, successHandler)

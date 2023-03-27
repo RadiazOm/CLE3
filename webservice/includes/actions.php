@@ -34,16 +34,18 @@ function getSignLibrary() {
 
 function getSportInfo() {
     return[
+        //Main title
         "mainTitle" => "Sporten",
 
-        "firstParagraphTitle" => "Algemeen",
+        //general
         "firstParagraph" => "Heb je een auditieve beperking en wil je toch sporten. wekelijks sporten 29% van de Nederlanders met een auditieve beperking.",
 
-        "secondParagraphTitle" => "Populaire sporten",
+        //populair
         "secondParagraph" => "Wil je een sport oefenen en weet je niet wat. Dit zijn de meest populaire sporten: atletiek, zwemmen, bowling, fietsen, golf, judo, schieten, schaken, squash, volleybal en tennis",
 
-        "thirdParagraphTitle" => "Communiceren",
+        //communication
         "thirdParagraph" => "Tijdens sporten is het communiceren heel belangrijk zowel voor mensen met beperkingen en mensen zonder beperkingen",
 
     ];
 }
+
