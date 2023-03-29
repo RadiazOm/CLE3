@@ -67,6 +67,7 @@ function fillModal(id)
 
 
 
+
 function FillHTML(e)
 {
 
@@ -114,5 +115,6 @@ function getJSONdata(apiUrl, successHandler)
 
 function ajaxErrorHandler(data)
 {
-   console.log("broke lol");
+   console.log(data);
+   console.log("it's broke");
 }
