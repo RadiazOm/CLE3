@@ -1,3 +1,13 @@
+<?php
+// je moet altijd eerst een session maken, gebruik daarom altijd deze code
+session_start();
+// als de user niet is ingelogd wordt hij altijd gestaart naar de login pagina
+if (!isset($_SESSION['loggedin'])) {
+    header('location: http://localhost/doof-project/login_index.php');
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
