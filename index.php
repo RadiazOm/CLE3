@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +64,7 @@
                 </div>
                 <div class="textBx">
                     <h2>Tekst bubbles<br><span>groeps sport</span></h2>
-                    <button><a href="bubbles-index.html">Button</a></button>
+                    <button><a href="bubbles-index.php">Button</a></button>
                 </div>
             </div>
         </div>
@@ -74,7 +76,7 @@
                 </div>
                 <div class="textBx">
                     <h2>Denk sport<br><span>test tekst</span></h2>
-                    <button><a href="Thinksport.html">Button</a></button>
+                    <button><a href="Thinksport.php">Button</a></button>
                 </div>
             </div>
         </div>

@@ -45,6 +45,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM user WHERE username = ?')) {
         }
     }
     $stmt->close();
+    header('Location: http://localhost/doof-project/');
 } else {
     // er is iets mis met de SQL
     echo 'kan de statement niet uitvoeren';
