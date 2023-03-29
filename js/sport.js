@@ -26,7 +26,7 @@ function init() {
     popularSport = document.getElementById("popularSport");
     communicationSport = document.getElementById("communicationSport");
 
-    getJSONdata(`webservice/index.php?id=2`, FillHTML)
+    getJSONdata(`webservice/index.php?webservice=info`, FillHTML)
 
 
 
