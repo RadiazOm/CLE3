@@ -16,36 +16,54 @@
 //making the init function start
 window.addEventListener('load', init);
 
-//The canvas constante references the HTML canvas element with the ID "canvas"
-//its a constante and not a variable because it never changes
-const canvas = document.getElementById("canvas")
-// Set the canvas height and width to the height and width of the browser window
-canvas.height = window.innerHeight /2
-canvas.width = window.innerWidth /2
-//the canvascontext constante gets the 2D context of the canvas, which allows us to draw on it
-//its a constante and not a variable because it never changes
-const canvascontext = canvas.getContext("2d")
+let canvas;
+let canvascontext;
+let favButton;
+//declare variable so the webapplication knows when & when not to draw
+let draw = false
 //declare prevX and prevY variables, which are used to keep track of (to hold/store) the previous mouse positions,
 //prev=previous. its a variable and not a constante because it changes
 let prevX = null
 let prevY = null
-//The canvascontext.lineWidth property sets the width of the line we will draw
-canvascontext.lineWidth = 5
-//declare variable so the webapplication knows when & when not to draw
-let draw = false
 
 function init()
 {
-    //set color of stroke to white on start
+//The canvas variabele references the HTML canvas element with the ID "canvas"
+    canvas = document.getElementById("canvas")
+    favButton = document.getElementById('fav')
+
+    favButton.addEventListener('click', favClickHandler)
+
+// Set the canvas height and width to the height and width of the browser window
+    canvas.height = window.innerHeight /2
+    canvas.width = window.innerWidth /2
+//the canvascontext variable gets the 2D context of the canvas, which allows us to draw on it
+    canvascontext = canvas.getContext("2d")
+//The canvascontext.lineWidth property sets the width of the line we will draw
+    canvascontext.lineWidth = 5
+//set color of stroke to white on start
     canvascontext.strokeStyle = "white";
 
+    //trying to get the base64 in localstorage back to png in canvas
+    if (localStorage.getItem('imgData') !== null) {
+        //first translate from base64 to png
+        let img64 = localStorage.getItem('imgData');
+        let image = new Image()
+        //then put it in canvas
+        image.src = img64;
+        // document.querySelector('body').appendChild(image);
+        image.addEventListener('load', () => canvascontext.drawImage(image, 0, 0));
+        console.log(image.src)
+        canvascontext.drawImage(image, 0, 0);
+    }
+
     //Next piece of code is for selecting the color you want to draw with.
-// It selects all elements with the class "color" from the document(drawingtool.html),
+// It selects all elements with the class "color" from the document(drawingtool.php),
 // converts the resulting NodeList to an array, and adds an event listener to each element in the array.
 // When an element is clicked,
 // the code sets the stroke style of the canvas to the color value stored in the element's "data-color" attribute.
 
-// Select all elements with class "color" from the drawingtool.html
+// Select all elements with class "color" from the drawingtool.php
     let colors = document.querySelectorAll(".color")
 // Convert the NodeList returned by querySelectorAll to an array
     colors = Array.from(colors)
@@ -88,6 +106,23 @@ function init()
         // simulate a click on the 'saveable' element to download the image file
         saveable.click()
     })
+
+
+
+}
+
+//TRYING TO DO LOCAL STORAGE
+
+function getBase64Image(img) {
+    return img.toDataURL("image/png");
+    // console.log(dataURL)
+    // return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+function favClickHandler(){
+    let canvasLocalStorage = document.getElementById('canvas');
+    let imgData = getBase64Image(canvasLocalStorage);
+    localStorage.setItem("imgData", imgData);
 }
 
 

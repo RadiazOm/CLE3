@@ -375,13 +375,6 @@ body {
 /* Drawingtool specific classes */
 
 /*Set margin and padding to 0 for the entire body element*/
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #283A71;
-
-
-}
 
 .pocket {
     display: flex;
@@ -473,7 +466,7 @@ based on their respective nth-child positions*/
 /*Style each button (save, clear, and add to favorite) with
 orange background, padding and border radius, white text color
 */
-button{
+.drawing-button{
     border: none;
     outline: none;
     padding: .6em 1em;

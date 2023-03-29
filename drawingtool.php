@@ -27,10 +27,10 @@
     <div class="color" data-color="#3FAEFA"></div>
     <div class="color" data-color="#CC7B2B"></div>
     <div class="color" data-color="#FDC601"></div>
-    <div class="color" data-color="#283A71"></div>
-    <button class="clear">clear</button>
-    <button class="save">save</button>
-    <button class="fav">favorite</button>
+    <div class="color" data-color="#383961"></div>
+    <button class="clear drawing-button">clear</button>
+    <button class="save drawing-button">save</button>
+    <button class="fav drawing-button" id="fav">favorite</button>
 </div>
 <script src="js/canvas.js"></script>
 </body>
