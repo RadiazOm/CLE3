@@ -26,7 +26,7 @@
             <h2 class="title">Algemeen</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus"></i>
+                    <i class="fa-regular fa-magnifying-glass-plus" id="General"></i>
 
                 <div id="generalSport"></div>
 
@@ -40,6 +40,7 @@
             <h2 class="title">Populair</h2>
             <div class="box-blue">
                 <p>
+                    <i class="fa-regular fa-magnifying-glass-plus" id="Popular"></i>
                 <div id="popularSport"></div>
                 </p>
             </div>
@@ -53,6 +54,7 @@
             <h2 class="title">Communicatie</h2>
             <div class="box-blue">
                 <p>
+                    <i class="fa-regular fa-magnifying-glass-plus" id="Communication"></i>
                 <div id="communicationSport"></div>
                 </p>
             </div>
@@ -63,11 +65,10 @@
 
 <!-- modal -->
 
-<div class="bg-modal" >
-    <div class="modal-content">
-        <div class="close">+</div>
-    </div>
-</div>
+<dialog class="modal" id="popup-sport" >
+    <div class="modal-content"></div>
+    <button class="modal-close" id="modal-close">X</button>
+</dialog>
 
 
 

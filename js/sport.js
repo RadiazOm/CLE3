@@ -1,13 +1,12 @@
-
 window.addEventListener('load', init);
-
-
 
 
 let titleSport;
 let generalSport;
 let popularSport;
 let communicationSport;
+let modalSport;
+let modalClose;
 
 
 function init() {
@@ -18,29 +17,54 @@ function init() {
     iconClicker.addEventListener("click", iconClickHandler);
 
 
+    let iconClose = document.getElementById('modal-close')
+    iconClose.addEventListener("click",iconCloseHandler);
+
 
     titleSport = document.getElementById("titleSport");
     generalSport = document.getElementById("generalSport");
     popularSport = document.getElementById("popularSport");
     communicationSport = document.getElementById("communicationSport");
 
-    getJSONdata(`webservice/index.php?id=2`, FillHTML)
+    getJSONdata(`webservice/index.php?webservice=info`, FillHTML)
 
 
 
 }
 
 
-function iconClickHandler(e){
+function iconClickHandler(e) {
 
     console.log(e.target);
     let target = e.target;
 
-    if(target.nodeName !== 'I'){
+    if (target.nodeName !== 'I'){
         return;
     }
+    modalSport = document.getElementById("popup-sport");
+
+    modalSport.showModal()
+
+    fillModal(e.target.id)
+}
+
+function iconCloseHandler()
+{
+    modalClose = document.getElementById('modal-close');
+    modalSport.close()
 
 }
+
+function fillModal(id)
+{
+    if (id)
+    {
+
+    }
+}
+
+
+
 
 
 
@@ -91,5 +115,6 @@ function getJSONdata(apiUrl, successHandler)
 
 function ajaxErrorHandler(data)
 {
-   console.log("broke lol");
+   console.log(data);
+   console.log("it's broke");
 }
