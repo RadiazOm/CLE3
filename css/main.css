@@ -351,6 +351,7 @@ body {
     position: relative;
     height: 50px;
     margin: 10px;
+    padding-inline: 25px;
     text-align: center;
     font-size: 28px;
     background-color: #24A6DE;
@@ -478,8 +479,7 @@ button{
     outline: none;
     padding: .6em 1em;
     border-radius: 3px;
-    background-color: #CC7B2B
-;
+    background-color: #CC7B2B;
     color: #fff;
 }
 
