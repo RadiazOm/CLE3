@@ -44,6 +44,7 @@ function iconClickHandler(e) {
     modalSport = document.getElementById("popup-sport");
 
     modalSport.showModal()
+
     fillModal(e.target.id)
 }
 
@@ -56,9 +57,10 @@ function iconCloseHandler()
 
 function fillModal(id)
 {
-    // if (id === ){
-    //
-    // }
+    if (id)
+    {
+
+    }
 }
 
 
