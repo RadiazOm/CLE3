@@ -2,24 +2,27 @@
 //Require functions for actions
 require_once "includes/actions.php";
 
-$data = 'API is not working';
+$data = null;
 
 if ($_GET['webservice'] == 'translator') {
     $data = getSignLibrary();
 }
 
 if ($_GET['webservice'] == 'info') {
-    if ($_GET['id'] === 'General'){
-        $data = 'no function yet';
-    } else if ($_GET['id'] === 'Popular'){
-        $data = ':/';
-    }
-    else if ($_GET['id'] === 'Communication'){
-        $data = ':/';
-    }
-    else{
-        $data = getSportInfo();
 
+    if (isset($_GET['id'])) {
+        if ($_GET['id'] === 'General') {
+            $data = 'no function yet';
+
+        } else if ($_GET['id'] === 'Popular') {
+            $data = 'no function yet';
+        } else if ($_GET['id'] === 'Communication') {
+            $data = 'no function yet';
+        } else {
+            $data = getSportInfo();
+        }
+    } else {
+        $data = getSportInfo();
     }
 }
 
