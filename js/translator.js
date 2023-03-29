@@ -23,7 +23,7 @@ function init() {
     button.addEventListener('click', buttonClickHandler);
     saveButton.addEventListener('click', saveButtonClickHandler)
     quickButtonsContainer.addEventListener('click', quickButtonsClickHandler)
-    getJSONdata(`webservice/index.php?id=1`, configureData);
+    getJSONdata(`webservice/index.php?webservice=translator`, configureData);
 
     let quickButtonsJSON = JSON.parse(localStorage.getItem('quickButtons'));
     if (quickButtonsJSON !== null) {
