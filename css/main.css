@@ -374,6 +374,125 @@ body {
 /* --------------------------- */
 /* Drawingtool specific classes */
 
+/*Set margin and padding to 0 for the entire body element*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #283A71;
+
+
+}
+
+.pocket {
+    display: flex;
+    width: 80vw;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 1vw;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1vw;
+}
+
+/*Set the #wrappercanvas element to display as a flex container,
+ center the items both horizontally and vertically*/
+#wrappercanvas {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+/*Add a 2px solid black border to canvas element(s)*/
+canvas {
+    border: 2px white solid;
+}
+
+/*Set margin and padding to 0 for all elements on the page*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Style the color navigation bar with
+a fixed position at the top of the page,
+centered horizontally
+and spaced evenly between its items*/
+.colornav{
+    width: 400px;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*Increase the opacity of the color navigation bar on hover*/
+.colornav:hover{
+    opacity: 1;
+}
+
+/*Style each color button with a 30px height and width,
+blue background, border radius,
+and a 3px solid gray border
+*/
+.color{
+    height: 30px;
+    width: 30px;
+    background-color: blue;
+    border-radius: 50%;
+    border: 3px solid rgb(214, 214, 214);
+    transition: transform .5s;
+}
+
+/*Add a scaling transition on hover*/
+.color:hover{
+    transform: scale(1.2);
+}
+
+/*Set the background color for each color button,
+based on their respective nth-child positions*/
+.color:nth-child(1){
+    background-color: #ffffff;
+}
+.color:nth-child(2){
+    background-color: #3FAEFA;
+}
+.color:nth-child(3){
+    background-color: #CC7B2B;
+}
+.color:nth-child(4){
+    background-color: #FDC601;
+}
+.color:nth-child(5){
+    background-color: #283A71;
+}
+
+/*Style each button (save, clear, and add to favorite) with
+orange background, padding and border radius, white text color
+*/
+button{
+    border: none;
+    outline: none;
+    padding: .6em 1em;
+    border-radius: 3px;
+    background-color: #CC7B2B
+;
+    color: #fff;
+}
+
+/*so i can change the color of the save button quickly if i want to*/
+.save{
+    background-color: #CC7B2B;
+}
+
+/*change color of add to favorites button from orange to blue*/
+.fav{
+    background-color: #3FAEFA
+;
+}
 /* End of Drawingtool specific classes */
 /* ---------------------------------- */
 /* End of Drawingtool specific classes */
