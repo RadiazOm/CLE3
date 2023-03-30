@@ -22,7 +22,6 @@ body {
 /* general button styling */
 .button {
     width: 150px;
-    height: 50px;
     font-size: 38px;
     background-color: #24A6DE;
     border: none;
@@ -345,6 +344,11 @@ body {
 .sign {
     width: 70px;
     height: 100px;
+}
+
+.invisible {
+    visibility: hidden;
+    display: none;
 }
 
 .favorite-button {

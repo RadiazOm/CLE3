@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script src="js/translator.js"></script>
     <script src="js/nav.js"></script>
     <script src="https://kit.fontawesome.com/aa25eb13aa.js" crossorigin="anonymous"></script>
@@ -42,10 +44,20 @@
     </div>
 </div>
 
-<div class="container half">
-    <div class="box-blue container">
-        <div class="field-blue" id="quick-buttons">
-            <!-- Place for the quick buttons to appear -->
+<div class="flex-around container">
+    <div class="container half">
+        <div class="box-blue container">
+            <div class="field-blue" id="quick-buttons">
+                <!-- Place for the quick buttons to appear -->
+            </div>
+        </div>
+    </div>
+    <div class="container half">
+        <div class="box-blue container">
+            <div class="field-blue flex-around">
+                <button class="button" id="gif"> Change to GIF</button>
+                <input type="range" min="100" max="2000" value="1000" class="slider" id="speed">
+            </div>
         </div>
     </div>
 </div>

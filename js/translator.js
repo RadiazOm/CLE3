@@ -4,6 +4,11 @@ window.addEventListener('load', init);
 // global variables
 let button;
 let saveButton;
+let gifButton;
+let speedSlider
+let gif = false;
+let timeOutId;
+let currentImage = 0;
 let quickButtonsContainer;
 let quickButtons = [];
 let input;
@@ -19,17 +24,20 @@ function init() {
     output = document.getElementById('translated');
     errorMessage = document.getElementById('error');
     quickButtonsContainer = document.getElementById('quick-buttons');
+    gifButton = document.getElementById('gif');
+    speedSlider = document.getElementById('speed');
 
     button.addEventListener('click', buttonClickHandler);
-    saveButton.addEventListener('click', saveButtonClickHandler)
-    quickButtonsContainer.addEventListener('click', quickButtonsClickHandler)
+    saveButton.addEventListener('click', saveButtonClickHandler);
+    gifButton.addEventListener('click', gifButtonClickHandler);
+    quickButtonsContainer.addEventListener('click', quickButtonsClickHandler);
     getJSONdata(`webservice/index.php?webservice=translator`, configureData);
 
     let quickButtonsJSON = JSON.parse(localStorage.getItem('quickButtons'));
     if (quickButtonsJSON !== null) {
         for (const quickButton of quickButtonsJSON) {
-            quickButtons.push(quickButton)
-            createQuickButton(quickButton)
+            quickButtons.push(quickButton);
+            createQuickButton(quickButton);
         }
     }
 }
@@ -39,9 +47,9 @@ function configureData(e) {
     data = e;
 }
 
-// whenever someone clicks on the "Go!" button gather the data from the inut field and create images
+// whenever someone clicks on the "Go!" button gather the data from the input field and create images
 function buttonClickHandler() {
-    let inputValue = input.value
+    let inputValue = input.value;
     output.innerHTML = "";
     createImages(inputValue);
 }
@@ -50,26 +58,69 @@ function buttonClickHandler() {
 function saveButtonClickHandler() {
     let inputValue = input.value;
 
-    console.log(inputValue)
-    addItemToLocalStorage(inputValue)
+    console.log(inputValue);
+    addItemToLocalStorage(inputValue);
     createQuickButton(inputValue);
 }
+
+function gifButtonClickHandler() {
+    let signs = output.children;
+    if (signs === '') {
+        return;
+    }
+    if (gif === false) {
+        gif = true;
+        for (const sign of signs) {
+            sign.classList.add('invisible');
+        }
+        showSigns();
+    } else {
+        gif = false;
+        for (const sign of signs) {
+            sign.classList.remove('invisible');
+        }
+        clearTimeout(timeOutId);
+        currentImage = 0;
+    }
+}
+
+function showSigns() {
+    output.children[currentImage].classList.remove('invisible');
+    if (currentImage === 0) {
+        output.children[output.children.length - 1].classList.add('invisible');
+    } else {
+        output.children[currentImage - 1].classList.add('invisible');
+    }
+    if (currentImage === output.children.length - 1) {
+        currentImage = -1;
+    }
+    currentImage++;
+
+    // output.children[currentImage].classList.add('invisible');
+    // output.children[currentImage + 1].classList.remove('invisible');
+
+    if (gif === true) {
+        timeOutId = setTimeout(showSigns, speedSlider.value);
+    }
+}
+
+
 
 // whenever a quick button is clicked we do do some checks to bypass faulty html built by me and change the text and images of the translator
 function quickButtonsClickHandler(e) {
     let element = e.target;
     if (element.classList.contains('favorite-button') || element.parentElement.classList.contains('favorite-button')) {
         if (element.innerHTML === 'X') {
-            element.parentElement.remove()
-            removeItemFromLocalStorage(quickButtons.indexOf(element.parentElement.children[0].innerHTML))
+            element.parentElement.remove();
+            removeItemFromLocalStorage(quickButtons.indexOf(element.parentElement.children[0].innerHTML));
             return;
         }
         if (element.children.length === 0) {
-            input.value = element.innerHTML
-            createImages(element.innerHTML)
+            input.value = element.innerHTML;
+            createImages(element.innerHTML);
         } else {
-            input.value = element.children[0].innerHTML
-            createImages(element.children[0].innerHTML)
+            input.value = element.children[0].innerHTML;
+            createImages(element.children[0].innerHTML);
         }
     }
 
@@ -80,16 +131,16 @@ function createQuickButton(value) {
 
     let button = document.createElement('button');
     button.classList.add('favorite-button');
-    quickButtonsContainer.appendChild(button)
+    quickButtonsContainer.appendChild(button);
 
-    let text = document.createElement('p')
+    let text = document.createElement('p');
     text.innerHTML = value;
-    button.appendChild(text)
+    button.appendChild(text);
 
-    let deleteButton = document.createElement('div')
-    deleteButton.classList.add('delete')
-    deleteButton.innerHTML = 'X'
-    button.appendChild(deleteButton)
+    let deleteButton = document.createElement('div');
+    deleteButton.classList.add('delete');
+    deleteButton.innerHTML = 'X';
+    button.appendChild(deleteButton);
 }
 
 // using the data from the JSON file we can determine which images corespond to which letter, using that we can loop trough
@@ -98,7 +149,7 @@ function createImages(sentence) {
     output.innerHTML = '';
     for (const letter of sentence.toLowerCase()) {
         if (letter === " ") {
-            let space = document.createElement('div')
+            let space = document.createElement('div');
             space.classList.add('space');
             output.appendChild(space);
         } else if (data.hasOwnProperty(letter)) {
@@ -121,9 +172,9 @@ function addItemToLocalStorage(item) {
 // removes the quick button from local storage
 function removeItemFromLocalStorage(item) {
     if (Number.isInteger(item)) {
-        quickButtons.splice(item, 1)
+        quickButtons.splice(item, 1);
     } else {
-        quickButtons.splice(quickButtons.indexOf(item), 1)
+        quickButtons.splice(quickButtons.indexOf(item), 1);
     }
     localStorage.setItem('quickButtons', JSON.stringify(quickButtons));
 }
