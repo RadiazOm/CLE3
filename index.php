@@ -76,7 +76,7 @@
                 </div>
                 <div class="textBx">
                     <h2>Denk sport<br><span>test tekst</span></h2>
-                    <button><a href="Thinksport.php">Button</a></button>
+                    <button><a href="translator.php">Button</a></button>
                 </div>
             </div>
         </div>

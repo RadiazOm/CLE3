@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +15,9 @@
     <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo" id="nav-button">
     <div class="nav-popup box-orange" id="nav-popup">
         <a href="bubbles-index.php"><img src="media/img1.jpg" alt="" class="img-link"></a>
-        <a href="translator.html"><img src="media/img2.jpg" alt="" class="img-link"></a>
-        <a href="drawingtool.html"><img src="media/img3.jpg" alt="" class="img-link"></a>
-        <a href="sport.html"><img src="media/img4.jpg" alt="" class="img-link"></a>
+        <a href="translator.php"><img src="media/img2.jpg" alt="" class="img-link"></a>
+        <a href="drawingtool.php"><img src="media/img3.jpg" alt="" class="img-link"></a>
+        <a href="sport.php"><img src="media/img4.jpg" alt="" class="img-link"></a>
     </div>
 </nav>
 
