@@ -45,7 +45,6 @@ function iconClickHandler(e) {
 
     modalSport.showModal()
 
-    fillModal(e.target.id)
 }
 
 function iconCloseHandler()
@@ -54,16 +53,6 @@ function iconCloseHandler()
     modalSport.close()
 
 }
-
-function fillModal(id)
-{
-    if (id)
-    {
-
-    }
-}
-
-
 
 
 

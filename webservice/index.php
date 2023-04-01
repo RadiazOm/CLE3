@@ -12,12 +12,11 @@ if ($_GET['webservice'] == 'info') {
 
     if (isset($_GET['id'])) {
         if ($_GET['id'] === 'General') {
-            $data = 'no function yet';
-
+            $data = getSportInfoDetails();
         } else if ($_GET['id'] === 'Popular') {
-            $data = 'no function yet';
+            $data = getSportInfoDetails();
         } else if ($_GET['id'] === 'Communication') {
-            $data = 'no function yet';
+            $data = getSportInfoDetails();
         } else {
             $data = getSportInfo();
         }
