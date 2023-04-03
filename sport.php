@@ -29,7 +29,7 @@ session_start();
             <h2 class="title">Algemeen</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="General"></i>
+                    <i class="fa-regular fa-magnifying-glass-plus" data-id="0"></i>
 
                 <div id="generalSport"></div>
 
@@ -43,7 +43,7 @@ session_start();
             <h2 class="title">Populair</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="Popular"></i>
+                    <i class="fa-regular fa-magnifying-glass-plus" data-id="1"></i>
                 <div id="popularSport"></div>
                 </p>
             </div>
@@ -57,7 +57,7 @@ session_start();
             <h2 class="title">Communicatie</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="Communication"></i>
+                    <i class="fa-regular fa-magnifying-glass-plus" data-id="2"></i>
                 <div id="communicationSport"></div>
                 </p>
             </div>
@@ -69,7 +69,7 @@ session_start();
 <!-- modal -->
 
 <dialog class="modal" id="popup-sport" >
-    <div class="modal-content"></div>
+    <div class="modal-content"> </div>
     <button class="modal-close" id="modal-close">X</button>
 </dialog>
 

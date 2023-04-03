@@ -512,6 +512,7 @@ button{
 .modal-content{
     width: 500px;
     height: 300px;
+    color: black;
     background: white;
     border-radius: 4px;
     text-align: center;

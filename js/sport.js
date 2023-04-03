@@ -1,6 +1,6 @@
 window.addEventListener('load', init);
 
-
+let clickedIcon;
 let titleSport;
 let generalSport;
 let popularSport;
@@ -42,6 +42,8 @@ function iconClickHandler(e) {
         return;
     }
     modalSport = document.getElementById("popup-sport");
+    clickedIcon = e.target.dataset.id;
+    getJSONdata(`webservice/index.php?webservice=info&id=1`, fillModal)
 
     modalSport.showModal()
 
@@ -54,6 +56,10 @@ function iconCloseHandler()
 
 }
 
+function fillModal(data) {
+   modalSport.children[0].innerHTML = data[clickedIcon];
+
+}
 
 
 

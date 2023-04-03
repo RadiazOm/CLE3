@@ -9,17 +9,8 @@ if ($_GET['webservice'] == 'translator') {
 }
 
 if ($_GET['webservice'] == 'info') {
-
     if (isset($_GET['id'])) {
-        if ($_GET['id'] === 'General') {
-            $data = getSportInfoDetails();
-        } else if ($_GET['id'] === 'Popular') {
-            $data = getSportInfoDetails();
-        } else if ($_GET['id'] === 'Communication') {
-            $data = getSportInfoDetails();
-        } else {
-            $data = getSportInfo();
-        }
+        $data = getSportInfoDetails();
     } else {
         $data = getSportInfo();
     }
