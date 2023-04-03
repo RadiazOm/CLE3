@@ -1,3 +1,13 @@
+<?php
+// je moet altijd eerst een session maken, gebruik daarom altijd deze code
+session_start();
+// als de user niet is ingelogd wordt hij altijd gestaart naar de login pagina
+if (!isset($_SESSION['loggedin'])) {
+    header('location: http://localhost/doof-project/login_index.php');
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,13 +26,6 @@
 <main>
 
     <div class="bubble-container" id="bubble-container">
-
-<!--        <div class="bubble bubble-bottom-left" id="bubble">-->
-<!--          <p>Type any text here and the bubble will grow to fit the text no matter how many lines.  Isn't that nifty?</p>-->
-<!--        </div>-->
-
-
-
         <div class="bubble bubble-bottom-left" id="bubble-create">
             <a href="#"><i class="fa-solid fa-plus"></i></a>
         </div>
@@ -36,7 +39,8 @@
 
             <form action="" id="modal-form">
                 <input type="text" id="input-field" placeholder="Vul hier tekst in">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="submit" class="modal-submit">
+                <input type="submit" value="delete" id="delete" class="modal-delete">
             </form>
         </div>
     </div>

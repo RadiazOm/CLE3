@@ -1,8 +1,8 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!doctype html>
-    <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -14,17 +14,22 @@
         <title>Document</title>
     </head>
 
-    <div class="over-ons-container">
-        <div class="ons-imgBx">
-            <img src="media/logo-no-background.png" alt="logo">
-        </div>
-        <div class="ons-content">
-            <p>Wij zijn Soundoff Sports, en het doel van onze website isom sporten net iets gemakkelijker te maken voor mensen met een auditieve beperking.
-                Op onze website vind je een gebarentaal vertaler, een hulpmiddel voor lesgeven, een informatie pagina, en een teken- en notitiepagina.</p>
-        </div>
-    </div>
+
 
 <body>
+
+
+
+<div class="over-ons-container">
+    <div class="ons-imgBx">
+        <img src="media/logo-no-background.png" alt="logo">
+    </div>
+    <div class="ons-content">
+        <p>Wij zijn Soundoff Sports, en het doel van onze website isom sporten net iets gemakkelijker te maken voor mensen met een auditieve beperking.
+            Op onze website vind je een gebarentaal vertaler, een hulpmiddel voor lesgeven, een informatie pagina, en een teken- en notitiepagina.</p>
+    </div>
+</div>
+
 <div class="container">
     <div class="icon">
         <div class="imgBx active" style="--i:1" data-id="content1">
@@ -61,7 +66,7 @@
                 </div>
                 <div class="textBx">
                     <h2>Tekst bubbles<br><span>groeps sport</span></h2>
-                    <button><a href="bubbles-index.html">Button</a></button>
+                    <button><a href="bubbles-index.php">Button</a></button>
                 </div>
             </div>
         </div>
@@ -73,7 +78,7 @@
                 </div>
                 <div class="textBx">
                     <h2>Denk sport<br><span>test tekst</span></h2>
-                    <button><a href="Thinksport.html">Button</a></button>
+                    <button><a href="translator.php">Button</a></button>
                 </div>
             </div>
         </div>
@@ -85,13 +90,18 @@
                 </div>
                 <div class="textBx">
                     <h2>Teken- en notitie hulpmiddel<br><span>test tekst</span></h2>
-                    <button><a href="drawingtool.html">Button</a></button>
+                    <button><a href="drawingtool.php">Button</a></button>
                 </div>
             </div>
         </div>
 
     </div>
 
+
+</div>
+
+<div class="login-container">
+    <a href="login_index.php">Login</a>
 </div>
 <script src="js/script.js"></script>
 

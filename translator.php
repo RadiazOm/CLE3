@@ -1,9 +1,12 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script src="js/translator.js"></script>
     <script src="js/nav.js"></script>
     <script src="https://kit.fontawesome.com/aa25eb13aa.js" crossorigin="anonymous"></script>
@@ -13,9 +16,9 @@
 <nav class="navbar">
     <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo" id="nav-button">
     <div class="nav-popup box-orange" id="nav-popup">
-        <a href="bubbles-index.html"><img src="media/img1.jpg" alt="" class="img-link"></a>
-        <a href="translator.html"><img src="media/img2.jpg" alt="" class="img-link"></a>
-        <a href="drawingtool.html"><img src="media/img3.jpg" alt="" class="img-link"></a>
+        <a href="bubbles-index.php"><img src="media/img1.jpg" alt="" class="img-link"></a>
+        <a href="translator.php"><img src="media/img2.jpg" alt="" class="img-link"></a>
+        <a href="drawingtool.php"><img src="media/img3.jpg" alt="" class="img-link"></a>
         <a href="sport.php"><img src="media/img4.jpg" alt="" class="img-link"></a>
     </div>
 </nav>
@@ -41,10 +44,20 @@
     </div>
 </div>
 
-<div class="container half">
-    <div class="box-blue container">
-        <div class="field-blue" id="quick-buttons">
-            <!-- Place for the quick buttons to appear -->
+<div class="flex-around container">
+    <div class="container half">
+        <div class="box-blue container">
+            <div class="field-blue" id="quick-buttons">
+                <!-- Place for the quick buttons to appear -->
+            </div>
+        </div>
+    </div>
+    <div class="container half">
+        <div class="box-blue container">
+            <div class="field-blue flex-around">
+                <button class="button" id="gif"> Change to GIF</button>
+                <input type="range" min="100" max="2000" value="1000" class="slider" id="speed">
+            </div>
         </div>
     </div>
 </div>

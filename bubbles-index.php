@@ -1,3 +1,13 @@
+<?php
+// We need to use sessions, so you should always start sessions using the below code.
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+    header('Location: index.html');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +65,7 @@
                     <div class="card-details">
                         <h2>Speaker</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab enim illo, laudantium non officiis soluta.</p>
-                        <a href="speaker-bubbles.html">Klik Hier</a>
+                        <a href="speaker-bubbles.php">Klik Hier</a>
                     </div>
                 </div>
             </div>

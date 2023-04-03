@@ -2,20 +2,23 @@ window.addEventListener('load', init);
 
 let form;
 let inputField;
-let bubble;
 let bubbleContainer;
+let list
+let bubbleItems
+let currentBubble;
 
 function init(){
 
-form = document.getElementById('modal-form');
-inputField = document.getElementById('input-field');
-bubble = document.getElementById('bubble');
-bubbleContainer = document.getElementById('bubble-container')
+    form = document.getElementById('modal-form');
+    inputField = document.getElementById('input-field');
+    bubbleContainer = document.getElementById('bubble-container');
+    list = document.getElementById('delete');
+    let closeButton = document.querySelector('.close');
 
-
-let bubbleItemString = localStorage.getItem('bubbleItems');
+    // save data in localstorage
+    let bubbleItemString = localStorage.getItem('bubbleItems');
     if (bubbleItemString !== null) {
-        let bubbleItems = JSON.parse(bubbleItemString)
+        bubbleItems = JSON.parse(bubbleItemString)
         console.log(bubbleItems)
         for (let bubbleItem of bubbleItems){
             addBubbleItem(bubbleItem)
@@ -23,26 +26,51 @@ let bubbleItemString = localStorage.getItem('bubbleItems');
     }
 
     form.addEventListener('submit', formSubmitHandler);
+    closeButton.addEventListener('click', modalClose);
+    bubbleContainer.addEventListener('click', modalOpen);
+    list.addEventListener('click', bubbleClickHandler);
+}
 
-//    modal voor de create form
-//    modal open
-document.getElementById("bubble-create").addEventListener("click", function (){
-    document.querySelector('.bg-modal').style.display = 'flex';
+function modalOpen(e){
+    let element = e.target;
+    currentBubble = element.parentElement.dataset.name;
+    console.log(element.parentElement.dataset.name)
+    console.log(currentBubble);
+    if (!element.classList.contains('bubble') && element.nodeName !== 'P' && element.nodeName !== 'A') {
+        return;
+    }
+    if (element.id === 'bubble-create') {
+        document.querySelector('.bg-modal').style.display = 'flex';
+        document.querySelector('.modal-submit').style.display= 'flex';
+        document.querySelector('.modal-delete').style.display= 'none';
+    } else {
+        currentBubble = element.dataset.name
+        document.querySelector('.bg-modal').style.display = 'flex';
+        document.querySelector('.modal-submit').style.display= 'none';
+        document.querySelector('.modal-delete').style.display= 'flex';
+    }
+    if(element.nodeName === 'P'){
+        currentBubble = element.parentElement.dataset.name;
+    }
 
-    //modal close
-    document.querySelector('.close').addEventListener('click', function (){
-        console.log('Close button clicked');
-        document.querySelector('.bg-modal').style.display = 'none';
-    });
-});}
+    console.log(currentBubble);
+}
+
+function modalClose() {
+    document.querySelector('.bg-modal').style.display = 'none';
+}
 
 function formSubmitHandler(e) {
     e.preventDefault();
+    console.log(document.querySelector('.modal-submit').style.display)
+    if (document.querySelector('.modal-submit').style.display !== 'flex'){
+        return;
+    }
     let inputValue;
     console.log(inputField.value);
     if (inputField.value !== '') {
         inputValue = inputField.value;
-        let bubbleItems = JSON.parse(localStorage.getItem('bubbleItems')) || [];
+        bubbleItems = JSON.parse(localStorage.getItem('bubbleItems')) || [];
         bubbleItems.push(inputValue);
         localStorage.setItem('bubbleItems', JSON.stringify(bubbleItems));
         addBubbleItem(inputValue);
@@ -54,9 +82,27 @@ function formSubmitHandler(e) {
 function addBubbleItem(e){
     let bubble = document.createElement('div');
     bubble.classList.add('bubble', 'bubble-bottom-left');
+    bubble.dataset.name = e
     let bubbleText = document.createElement('p')
     bubbleText.innerHTML = e;
     bubble.appendChild(bubbleText)
     bubbleContainer.appendChild(bubble);
     console.log('iets');
+}
+
+function bubbleClickHandler(e) {
+    for (const bubble of bubbleContainer.children) {
+
+    }
+
+    // remove from array
+    console.log(currentBubble);
+    let itemPosition = bubbleItems.indexOf(currentBubble);
+    console.log(itemPosition)
+    bubbleItems.splice(itemPosition ,1);
+    // update local storage
+    localStorage.setItem('bubbleItems', JSON.stringify(bubbleItems))
+        // remove from html
+    currentBubble.remove();
+    console.log(bubbleItems)
 }
