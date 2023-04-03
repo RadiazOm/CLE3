@@ -1,9 +1,20 @@
 <?php
-// je moet altijd eerst een session maken, gebruik daarom altijd deze code
-session_start();
-// als de user niet is ingelogd wordt hij altijd gestaart naar de login pagina
-if (!isset($_SESSION['loggedin'])) {
-    header('location: http://localhost/doof-project/login_index.php');
+
+include_once "webservice/includes/dbh_include.php";
+
+// pak alle data uit de user tabel
+$query ="SELECT * FROM user";
+$result = mysqli_query($con, $query)
+or die('ERROR: ' . mysqli_error($con). 'with query ' . $query);
+
+//$users = [];
+//while ($row = mysqli_fetch_assoc($result)) {
+//    $users[] = $row;
+//}
+
+$bubbles =[];
+while ($row = mysqli_fetch_assoc($result)) {
+    $bubbles[] = $row;
 }
 
 ?>
@@ -17,7 +28,7 @@ if (!isset($_SESSION['loggedin'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/bubbles-index-style.css">
   <link rel="icon" type="image/x-icon" href="media/soundoff-sport-website-favicon-white.png">
-  <script src="js/bubbles.js"></script>
+<!--  <script src="js/bubbles.js"></script>-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
@@ -30,7 +41,13 @@ if (!isset($_SESSION['loggedin'])) {
             <a href="#"><i class="fa-solid fa-plus"></i></a>
         </div>
     </div>
-
+    <?php foreach ($bubbles as $bubble) {?>
+            <div id="bubble-container" data-id="<?=$bubble['id'] ?>" class="bubble-container" >
+                <div class="bubble bubble-bottom-left" id="bubble-create"  >
+                    <a data-id="<?=$bubble['content'] ?>"></a>
+                </div>
+            </div>
+    <?php }?>
     <!--    modal    -->
     <div class="bg-modal" >
         <div class="modal-content">
