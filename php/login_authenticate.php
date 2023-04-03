@@ -27,6 +27,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM user WHERE username = ?')) {
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
             echo 'Welkom ' .$_SESSION['name'] . '!';
+            header('Location: http://localhost/doof-project/');
         } else {
             // incorrect password
             echo 'incorrect password/username!';
@@ -37,6 +38,5 @@ if ($stmt = $con->prepare('SELECT id, password FROM user WHERE username = ?')) {
     }
 
     $stmt->close();
-    header('Location: http://localhost/doof-project/');
 }
 ?>
