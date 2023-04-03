@@ -21,8 +21,8 @@
 </nav>
 
 <h1 class="text-2 text-center">Notitie tool</h1>
-
-<div id="wrappercanvas"><canvas id="canvas"></canvas></div>
+<div class="pocket">
+<div class="wrappercanvas"><canvas id="canvas"></canvas></div>
 <div class="colornav">
     <!-- We will be accessing the data-color in JavaScript -->
     <div class="color" data-color="#ffffff"></div>
@@ -33,6 +33,7 @@
     <button class="clear drawing-button">clear</button>
     <button class="save drawing-button">save</button>
     <button class="fav drawing-button" id="fav">favorite</button>
+</div>
 </div>
 <script src="js/canvas.js"></script>
 </body>

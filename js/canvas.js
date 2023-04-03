@@ -44,18 +44,22 @@ function init()
 //set color of stroke to white on start
     canvascontext.strokeStyle = "white";
 
-    //trying to get the base64 in localstorage back to png in canvas
-    if (localStorage.getItem('imgData') !== null) {
-        //first translate from base64 to png
-        let img64 = localStorage.getItem('imgData');
-        let image = new Image()
-        //then put it in canvas
-        image.src = img64;
-        // document.querySelector('body').appendChild(image);
-        image.addEventListener('load', () => canvascontext.drawImage(image, 0, 0));
-        console.log(image.src)
-        canvascontext.drawImage(image, 0, 0);
-    }
+    //Next piece of code is for the localstorage
+// Check if there is imgData key saved in browser's localStorage
+if (localStorage.getItem('imgData') !== null) {
+    // If there is, retrieve it and store it in a variable
+    let img64 = localStorage.getItem('imgData');
+    // Create a new Image object
+    let image = new Image()
+    // Set the source of the new Image object to the retrieved image data
+    image.src = img64;
+    // Add an event listener to the Image object that will draw the image on the canvas once it has loaded
+    image.addEventListener('load', () => canvascontext.drawImage(image, 0, 0));
+    // Log the source of the image for debugging purposes
+    console.log(image.src)
+    // Draw the image on the canvas
+    canvascontext.drawImage(image, 0, 0);
+}
 
     //Next piece of code is for selecting the color you want to draw with.
 // It selects all elements with the class "color" from the document(drawingtool.php),
@@ -111,12 +115,9 @@ function init()
 
 }
 
-//TRYING TO DO LOCAL STORAGE
-
+//function for turning an img into base64 url
 function getBase64Image(img) {
     return img.toDataURL("image/png");
-    // console.log(dataURL)
-    // return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 }
 
 function favClickHandler(){

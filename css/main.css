@@ -394,7 +394,7 @@ body {
 
 /*Set the #wrappercanvas element to display as a flex container,
  center the items both horizontally and vertically*/
-#wrappercanvas {
+.wrappercanvas {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -416,15 +416,11 @@ a fixed position at the top of the page,
 centered horizontally
 and spaced evenly between its items*/
 .colornav{
-    width: 400px;
     height: 50px;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
+    gap: 10px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 /*Increase the opacity of the color navigation bar on hover*/
