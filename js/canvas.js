@@ -83,14 +83,11 @@ if (localStorage.getItem('imgData') !== null) {
     //Next piece of code is for clearing the canvas.
 // It selects the element with class "clear" from the document, adds an event listener to the element,
 // and defines the action that should be taken when the element is clicked.
-// When the "clear" button is clicked, the code clears the entire canvas by filling it with a transparent color,
-// which removes all previously drawn content.
-
 // Select the element with class "clear" from the document
     let clearBtn = document.querySelector(".clear")
 // Add an event listener to the "clear" button
     clearBtn.addEventListener("click", () => {
-        // When the "clear" button is clicked, clear the entire canvas by filling it with a transparent color
+        // When the "clear" button is clicked, clear the entire canvas
         canvascontext.clearRect(0, 0, canvas.width, canvas.height)
     })
 

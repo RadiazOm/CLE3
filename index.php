@@ -15,6 +15,7 @@ session_start();
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="media/soundoff-sport-website-favicon-white.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Document</title>
     </head>
 
@@ -58,7 +59,7 @@ session_start();
                 </div>
                 <div class="textBx">
                     <h2>algemene info<br><span>Ricky</span></h2>
-                    <button><a href="sport.php">Button</a></button>
+                    <button><a href="sport.php">klik hier</a></button>
                 </div>
             </div>
         </div>
@@ -70,7 +71,7 @@ session_start();
                 </div>
                 <div class="textBx">
                     <h2>Tekst bubbles<br><span>Olivier</span></h2>
-                    <button><a href="bubbles-index.php">Button</a></button>
+                    <button><a href="bubbles-index.php">klik hier</a></button>
                 </div>
             </div>
         </div>
@@ -82,7 +83,7 @@ session_start();
                 </div>
                 <div class="textBx">
                     <h2>translator<br><span>Jeffery</span></h2>
-                    <button><a href="translator.php">Button</a></button>
+                    <button><a href="translator.php">klik hier</a></button>
                 </div>
             </div>
         </div>
@@ -94,7 +95,7 @@ session_start();
                 </div>
                 <div class="textBx">
                     <h2>Teken- en notitie hulpmiddel<br><span>Dieuwe</span></h2>
-                    <button><a href="drawingtool.php">Button</a></button>
+                    <button><a href="drawingtool.php">klik hier</a></button>
                 </div>
             </div>
         </div>
