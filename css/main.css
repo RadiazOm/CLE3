@@ -103,6 +103,11 @@ body {
     transform: translate(-50%, -50%);
     top: 15%;
 }
+.nav-popup >  a:nth-of-type(5) > .img-link{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
 
 /* modal shit */
 .modal {

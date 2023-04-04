@@ -20,6 +20,7 @@
         <a href="translator.php"><img src="media/img2.jpg" alt="" class="img-link"></a>
         <a href="drawingtool.php"><img src="media/img3.jpg" alt="" class="img-link"></a>
         <a href="sport.php"><img src="media/img4.jpg" alt="" class="img-link"></a>
+        <a href="index.php"><img src="media/soundoff-sport-website-favicon-white.png" class="img-link" alt=""></a>
     </div>
 </nav>
 
