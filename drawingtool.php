@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Visual communication tool</title>
+    <script src="js/nav.js"></script>
 </head>
 <body>
 <nav class="navbar">
@@ -17,6 +18,7 @@
         <a href="translator.php"><img src="media/img2.jpg" alt="" class="img-link"></a>
         <a href="drawingtool.html"><img src="media/img3.jpg" alt="" class="img-link"></a>
         <a href="sport.php"><img src="media/img4.jpg" alt="" class="img-link"></a>
+        <a href="index.php"><img src="media/soundoff-sport-website-favicon-white.png" class="img-link" alt=""></a>
     </div>
 </nav>
 
