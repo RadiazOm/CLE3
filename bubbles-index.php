@@ -86,4 +86,37 @@ if (!isset($_SESSION['loggedin'])) {
 </main>
 
 </body>
+<footer class="footer">
+    <div class="container flex-around">
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/fredsjr" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Olivier</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/soapinmysight" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Dieuwe</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/RadiazOm" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Jeffrey</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/ikeetkip" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Ricky</h3>
+        </div>
+    </div>
+    <div class="text-center text-4">
+        <span>
+            © Jeffrey van Otterloo, Dieuwe van Rijnswou, Ricky Ng, Olivier Schell
+        </span>
+    </div>
+</footer>
 </html>
