@@ -137,7 +137,6 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 .container .icon .imgBx
 {
@@ -154,6 +153,7 @@ body
     transform: rotate(calc(360deg/4 * var(--i)));
     transform-origin: 340px;
     z-index: 100;
+    cursor: pointer;
 }
 .container .icon .imgBx.active{
     box-shadow: 0 0 0 6px #222,
