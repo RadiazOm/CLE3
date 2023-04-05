@@ -19,7 +19,13 @@ if ($_GET['webservice'] == 'info') {
 }
 
 //dieuwe's part
-//cry
+if ($_GET['webservice'] == 'drawing') {
+    if (isset($_GET['id'])) {
+        $data = getDrawingInfoDetails();
+    } else {
+        $data = getDrawingInfo();
+    }
+}
 
 //oliviers part
 if ($_GET['webservice'] == 'bubbles') {
