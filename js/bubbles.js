@@ -71,8 +71,9 @@ getJsonData('webservice/index.php?webservice=bubbles', bubblesDataConfig);
 function modalOpen(e){
     let element = e.target;
     currentBubble = element.parentElement.dataset.name;
-    currentId = element.parentElement.dataset.id;
+    document.getElementById('delete-id').value = element.parentElement.dataset.id;
     console.log(element.parentElement.dataset.name)
+    console.log(element.parentElement.dataset.id)
     console.log(currentBubble);
     if (!element.classList.contains('bubble') && element.nodeName !== 'P' && element.nodeName !== 'A') {
         return;
@@ -118,16 +119,17 @@ function formSubmitHandler(e) {
     }
 }
 
-    function addBubbleItem(e) {
+    function addBubbleItem(content, id) {
         let bubble = document.createElement('div');
         bubble.classList.add('bubble', 'bubble-bottom-left');
-        bubble.dataset.name = e
-        bubble.dataset.id = e
+        bubble.dataset.name = content
+        bubble.dataset.id = id
         let bubbleText = document.createElement('p')
-        bubbleText.innerHTML = e;
+        bubbleText.innerHTML = content;
         bubble.appendChild(bubbleText)
         bubbleContainer.appendChild(bubble);
         console.log('iets');
+        console.log(id)
     }
 
     function bubbleClickHandler(e) {

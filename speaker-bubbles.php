@@ -87,8 +87,8 @@ if (isset($_POST['submit'])) {
                 <input type="text" name="content" id="input-field" placeholder="Vul hier tekst in">
                 <input type="submit" name="submit" value="Submit" id="submit" class="modal-submit">
             </form>
-            <form action="php/delete_bubble.php" method="post">
-                <input type="hidden" name="id" value="">
+            <form action="php/delete_bubble.php?id" method="post">
+                <input type="hidden" name="id" value="" id="delete-id">
                 <input type="submit" value="delete" id="delete" class="modal-delete">
             </form>
         </div>

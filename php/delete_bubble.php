@@ -2,8 +2,9 @@
 require_once '../webservice/includes/dbh_include.php';
 //@var array($sql);
 
+
 // delete de data
-$sql = "DELETE FROM bubbles WHERE id='" . $_GET["id"] . "'";
+$sql = "DELETE FROM bubbles WHERE id='" . $_POST['id'] . "'";
 if (mysqli_query($con, $sql) === TRUE) {
     echo "Event deleted succesfully";
 } else  {

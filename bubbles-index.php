@@ -14,6 +14,7 @@ if (!isset($_SESSION['loggedin'])) {
     <meta charset="UTF-8">
     <title>tekst bubbels</title>
     <link rel="stylesheet" href="css/bubbles-index-style.css">
+
     <link rel="icon" type="image/x-icon" href="media/soundoff-sport-website-favicon-white.png">
     <script src="js/nav.js"></script>
 </head>
