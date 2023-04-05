@@ -31,7 +31,7 @@ if ($_GET['webservice'] == 'drawing') {
 }
 
 if ($_GET['webservice'] == 'bubbles') {
-
+    $data = getBubblesInfo();
 }
 
 //Set the header & output JSON so the client will know what to expect.

@@ -49,3 +49,18 @@ function getSportInfo() {
     ];
 }
 
+function getBubblesInfo(){
+    // pak alle data uit de user tabel
+    require_once "dbh_include.php";
+    $query ="SELECT * FROM bubbles";
+    $result = mysqli_query($con, $query)
+    or die('ERROR: ' . mysqli_error($con). 'with query ' . $query);
+
+
+    $bubbles = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $bubbles[] = $row;
+    }
+    return $bubbles;
+}
+
