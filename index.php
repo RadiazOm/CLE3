@@ -38,16 +38,16 @@ session_start();
 <div class="container">
     <div class="icon">
         <div class="imgBx active" style="--i:1" data-id="content1">
-            <img src="media/lesson.jpg">
+            <img src="media/articleIcon.png">
         </div>
         <div class="imgBx" style="--i:2" data-id="content2">
-            <img src="media/img2.jpg">
+            <img src="media/bubbleIcon.png">
         </div>
         <div class="imgBx" style="--i:3" data-id="content3">
-            <img src="media/sign-language.jpg">
+            <img src="media/signIcon.png">
         </div>
         <div class="imgBx" style="--i:4" data-id="content4">
-            <img src="media/drawing.jpg">
+            <img src="media/drawIcon.png">
         </div>
     </div>
 
@@ -55,7 +55,7 @@ session_start();
         <div class="contentBx active" id="content1">
             <div class="card">
                 <div class="imgBx1">
-                    <img src="media/lesson.jpg">
+                    <img src="media/articleIcon.png">
                 </div>
                 <div class="textBx">
                     <h2>algemene info<br><span>Ricky</span></h2>
@@ -67,7 +67,7 @@ session_start();
         <div class="contentBx" id="content2">
             <div class="card">
                 <div class="imgBx1">
-                    <img src="media/img2.jpg">
+                    <img src="media/bubbleIcon.png">
                 </div>
                 <div class="textBx">
                     <h2>Tekst bubbles<br><span>Olivier</span></h2>
@@ -79,7 +79,7 @@ session_start();
         <div class="contentBx" id="content3">
             <div class="card">
                 <div class="imgBx1">
-                    <img src="media/sign-language.jpg">
+                    <img src="media/signIcon.png">
                 </div>
                 <div class="textBx">
                     <h2>translator<br><span>Jeffery</span></h2>
@@ -91,7 +91,7 @@ session_start();
         <div class="contentBx" id="content4">
             <div class="card">
                 <div class="imgBx1">
-                    <img src="media/drawing.jpg">
+                    <img src="media/drawIcon.png">
                 </div>
                 <div class="textBx">
                     <h2>Teken- en notitie hulpmiddel<br><span>Dieuwe</span></h2>

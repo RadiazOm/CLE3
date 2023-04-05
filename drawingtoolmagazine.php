@@ -4,13 +4,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekenuitleg</title>
     <link rel="stylesheet" href="css/main.css">
-    <title>Visual communication tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <script src="js/drawingexplained.js"></script>
     <script src="js/nav.js"></script>
 </head>
 <body>
+
 <nav class="navbar">
     <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo" id="nav-button">
     <div class="nav-popup box-orange" id="nav-popup">
@@ -22,26 +23,69 @@
     </div>
 </nav>
 
-<h1 class="text-2 text-center">Notitie tool</h1>
-<div class="pocket">
-<div class="wrappercanvas"><canvas id="canvas"></canvas></div>
-<div class="colornav">
-    <!-- We will be accessing the data-color in JavaScript -->
-    <div class="color" data-color="#ffffff"></div>
-    <div class="color" data-color="#3FAEFA"></div>
-    <div class="color" data-color="#CC7B2B"></div>
-    <div class="color" data-color="#FDC601"></div>
-    <div class="color" data-color="#383961"></div>
-    <button class="clear drawing-button">clear</button>
-    <button class="save drawing-button">save</button>
-    <button class="fav drawing-button" id="fav">favorite</button>
-</div>
-    <div class="otherdrawingtool">
-        <!-- We will be accessing the data-color in JavaScript -->
-        <button class="explained drawing-button"><a href="drawingtoolmagazine.php">Klik hier voor meer uitleg over het tekenhulpmiddel</button>
+<!--    Title    -->
+<div id="title" class="text-center"> </div>
+
+
+<div id="containerColorClear" class="flex-around align-center container">
+    <div class="flex-column container">
+        <!--kleuren kiezen-->
+        <div>
+            <h2 class="title">Kleuren kiezen</h2>
+            <div class="box-blue">
+                <p>
+                    <i class="fa-regular fa-magnifying-glass-plus" id="General"></i>
+                <div id="chooseColor"></div>
+                </p>
+            </div>
+        </div>
+
+<!--        clear knop-->
+        <div>
+            <h2 class="title">Clear Knop</h2>
+            <div class="box-blue">
+                <p>
+                    <i class="fa-regular fa-magnifying-glass-plus" id="Popular"></i>
+                <div id="clearCanvas"></div>
+                </p>
+            </div>
+        </div>
+    </div>
+<!--    save knop-->
+    <div class="containerSaveFav">
+        <div>
+            <h2 class="title">Save knop</h2>
+            <div class="box-blue">
+                <p>
+                    <i class="fa-regular fa-magnifying-glass-plus" id="Communication"></i>
+                <div id="saveCanvas"></div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="title">Save knop</h2>
+        <div class="box-blue">
+            <p>
+                <i class="fa-regular fa-magnifying-glass-plus" id="Communication"></i>
+            <div id="saveCanvas"></div>
+            </p>
+        </div>
     </div>
 </div>
-<script src="js/canvas.js"></script>
+</div>
+
+
+<!-- modal -->
+
+<dialog class="modal" id="popup-canvas" >
+    <div class="modal-content"></div>
+    <button class="modal-close" id="modal-close">X</button>
+</dialog>
+
+
+
+
 <footer class="footer">
     <div class="container flex-around">
         <div class="box-orange align-center flex-wrap eight">
@@ -75,5 +119,6 @@
         </span>
     </div>
 </footer>
+
 </body>
 </html>

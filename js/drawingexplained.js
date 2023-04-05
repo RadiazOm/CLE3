@@ -1,11 +1,11 @@
 window.addEventListener('load', init);
 
-let clickedIcon;
-let titleSport;
-let generalSport;
-let popularSport;
-let communicationSport;
-let modalSport;
+
+let title;
+let chooseColor;
+let clearCanvas;
+let saveCanvas;
+let modal;
 let modalClose;
 
 
@@ -13,7 +13,7 @@ function init() {
 
 
 
-    let iconClicker = document.getElementById("containerSport")
+    let iconClicker = document.getElementById("containerCanvas")
     iconClicker.addEventListener("click", iconClickHandler);
 
 
@@ -21,10 +21,10 @@ function init() {
     iconClose.addEventListener("click",iconCloseHandler);
 
 
-    titleSport = document.getElementById("titleSport");
-    generalSport = document.getElementById("generalSport");
-    popularSport = document.getElementById("popularSport");
-    communicationSport = document.getElementById("communicationSport");
+    title = document.getElementById("title");
+    chooseColor = document.getElementById("chooseColor");
+    clearCanvas = document.getElementById("clearCanvas");
+    saveCanvas = document.getElementById("saveCanvas");
 
     getJSONdata(`webservice/index.php?webservice=info`, FillHTML)
 
@@ -41,25 +41,30 @@ function iconClickHandler(e) {
     if (target.nodeName !== 'I'){
         return;
     }
-    modalSport = document.getElementById("popup-sport");
-    clickedIcon = e.target.dataset.id;
-    getJSONdata(`webservice/index.php?webservice=info&id=1`, fillModal)
+    modal = document.getElementById("popup-canvas");
 
-    modalSport.showModal()
+    modal.showModal()
 
+    fillModal(e.target.id)
 }
 
 function iconCloseHandler()
 {
     modalClose = document.getElementById('modal-close');
-    modalSport.close()
+    modal.close()
 
 }
 
-function fillModal(data) {
-   modalSport.children[0].innerHTML = data[clickedIcon];
+function fillModal(id)
+{
+    if (id)
+    {
 
+    }
 }
+
+
+
 
 
 
@@ -71,26 +76,29 @@ function FillHTML(e)
 
     // title
     let h1 = document.createElement("h1");
-    h1.innerHTML = data.mainTitle;
-    titleSport.appendChild(h1);
+    h1.innerHTML = data.drawingTitle;
+    title.appendChild(h1);
 
-    // general sport
+    // kleuren kiezen
     let generalText = document.createElement("p");
-    generalText.innerHTML = data.firstParagraph;
-    generalSport.appendChild(generalText);
+    generalText.innerHTML = data.chooseColor;
+    chooseColor.appendChild(generalText);
 
-    // popular sport
+    // clear knop
     let popularText = document.createElement("p");
-    popularText.innerHTML = data.secondParagraph;
-    popularSport.appendChild(popularText);
+    popularText.innerHTML = data.clearCanvas;
+    clearCanvas.appendChild(popularText);
 
 
-    // communication sport
+    // save knop
     let communicationText = document.createElement("p");
-    communicationText.innerHTML = data.thirdParagraph;
-    communicationSport.appendChild(communicationText);
+    communicationText.innerHTML = data.saveCanvas;
+    saveCanvas.appendChild(communicationText);
 
-
+    // favoriete
+    let communicationText = document.createElement("p");
+    communicationText.innerHTML = data.favCanvas;
+    saveCanvas.appendChild(communicationText);
 
 }
 
@@ -110,6 +118,6 @@ function getJSONdata(apiUrl, successHandler)
 
 function ajaxErrorHandler(data)
 {
-   console.log(data);
-   console.log("it's broke");
+    console.log(data);
+    console.log("it's broke");
 }

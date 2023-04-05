@@ -1,5 +1,6 @@
-
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +9,19 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <script src="js/sport.js"></script>
+    <script src="js/nav.js"></script>
 </head>
 <body>
 
 <nav class="navbar">
-    <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo">
+    <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo" id="nav-button">
+    <div class="nav-popup box-orange" id="nav-popup">
+        <a href="bubbles-index.php"><img src="media/bubbleIcon.png" alt="" class="img-link"></a>
+        <a href="translator.php"><img src="media/signIcon.png" alt="" class="img-link"></a>
+        <a href="drawingtool.php"><img src="media/drawIcon.png" alt="" class="img-link"></a>
+        <a href="sport.php"><img src="media/articleIcon.png" alt="" class="img-link"></a>
+        <a href="index.php"><img src="media/soundoff-sport-website-favicon-white.png" class="img-link" alt=""></a>
+    </div>
 </nav>
 
 <!--    Title    -->
@@ -28,7 +37,7 @@
             <h2 class="title">Algemeen</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="General"></i>
+                    <i class="fa-regular fa-magnifying-glass-plus" data-id="0"></i>
 
                 <div id="generalSport"></div>
 
@@ -42,7 +51,7 @@
             <h2 class="title">Populair</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="Popular"></i>
+                    <i class="fa-regular fa-magnifying-glass-plus" data-id="1"></i>
                 <div id="popularSport"></div>
                 </p>
             </div>
@@ -56,7 +65,7 @@
             <h2 class="title">Communicatie</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="Communication"></i>
+                    <i class="fa-regular fa-magnifying-glass-plus" data-id="2"></i>
                 <div id="communicationSport"></div>
                 </p>
             </div>
@@ -68,7 +77,7 @@
 <!-- modal -->
 
 <dialog class="modal" id="popup-sport" >
-    <div class="modal-content"></div>
+    <div class="modal-content"> </div>
     <button class="modal-close" id="modal-close">X</button>
 </dialog>
 

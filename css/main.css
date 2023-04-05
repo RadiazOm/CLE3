@@ -65,45 +65,41 @@ body {
 .img-link {
     object-fit: cover;
     width: 100px;
-    height: 100px;
-    border: white 1px solid;
-    border-radius: 50%;
+    height: auto;
+    transform: scale(0.8);
 }
 
-/* ignore this it aint working */
-.img-link:before {
-    content: " ";
+.nav-popup a {
     position: absolute;
-    z-index: -1;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border: 5px solid #ffea00;
+    border: white 4px solid;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
 }
 
 /* css magic to style each image button separately */
-.nav-popup >  a:nth-of-type(1) > .img-link {
+.nav-popup >  a:nth-of-type(1){
     position: absolute;
     transform: translate(-50%, -50%);
     left: 85%;
 }
-.nav-popup >  a:nth-of-type(2) > .img-link{
+.nav-popup >  a:nth-of-type(2){
     position: absolute;
     transform: translate(-50%, -50%);
     top: 85%;
 }
-.nav-popup >  a:nth-of-type(3) > .img-link{
+.nav-popup >  a:nth-of-type(3){
     position: absolute;
     transform: translate(-50%, -50%);
     left: 15%;
 }
-.nav-popup >  a:nth-of-type(4) > .img-link{
+.nav-popup >  a:nth-of-type(4){
     position: absolute;
     transform: translate(-50%, -50%);
     top: 15%;
 }
-.nav-popup >  a:nth-of-type(5) > .img-link{
+.nav-popup >  a:nth-of-type(5){
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -416,6 +412,16 @@ canvas {
     padding: 0;
 }
 
+/*dit is een wrapper voor alle overige buttons*/
+.otherdrawingtool{
+    height: 50px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /*Style the color navigation bar with
 a fixed position at the top of the page,
 centered horizontally
@@ -495,6 +501,23 @@ orange background, padding and border radius, white text color
 /* ---------------------------------- */
 /* End of Drawingtool specific classes */
 
+/* Drawingtoolmagazine specific classes */
+/* --------------------------- */
+/* Drawingtoolmagazine specific classes */
+
+.containerColorClear{
+    margin: 25px;
+
+}
+
+.containerSaveFav{
+
+}
+
+/* End of Drawingtoolmagazine specific classes */
+/* ---------------------------------- */
+/* End of Drawingtoolmagazine specific classes */
+
 
 /*modal*/
 .bg-modal{
@@ -510,6 +533,7 @@ orange background, padding and border radius, white text color
 .modal-content{
     width: 500px;
     height: 300px;
+    color: black;
     background: white;
     border-radius: 4px;
     text-align: center;
@@ -529,3 +553,6 @@ input{
     transform: rotate(45deg);
     cursor: pointer;
 }
+
+
+
