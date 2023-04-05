@@ -63,9 +63,10 @@ body {
 
 /* good image button styling */
 .img-link {
-    object-fit: cover;
+    object-fit: contain;
     width: 100px;
     height: auto;
+    display: flex;
     transform: scale(0.8);
 }
 
@@ -74,6 +75,7 @@ body {
     border: white 4px solid;
     border-radius: 50%;
     overflow: hidden;
+    display: flex;
     width: 100px;
     height: 100px;
 }
