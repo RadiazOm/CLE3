@@ -36,10 +36,9 @@
     <button class="save drawing-button">save</button>
     <button class="fav drawing-button" id="fav">favorite</button>
 </div>
-    <div class="otherdrawingtool">
-        <!-- We will be accessing the data-color in JavaScript -->
-        <button class="explained drawing-button"><a href="drawingtoolmagazine.php">Klik hier voor meer uitleg over het tekenhulpmiddel</button>
-    </div>
+<!--    <div class="otherdrawingtool">-->
+<!--        <button class="explained drawing-button"><a href="drawingtoolmagazine.php">Klik hier voor meer uitleg over het tekenhulpmiddel</button>-->
+<!--    </div>-->
 </div>
 <script src="js/canvas.js"></script>
 <footer class="footer">

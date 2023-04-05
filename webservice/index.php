@@ -20,10 +20,12 @@ if ($_GET['webservice'] == 'info') {
 
 //dieuwe's part
 if ($_GET['webservice'] == 'drawing') {
-    $data = getDrawingInfo();
+    if (isset($_GET['id'])) {
+        $data = getDrawingInfoDetails();
+    } else {
+        $data = getDrawingInfo();
+    }
 }
-
-//cry
 
 //oliviers part
 if ($_GET['webservice'] == 'bubbles') {
