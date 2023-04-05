@@ -113,6 +113,7 @@ function quickButtonsClickHandler(e) {
             removeItemFromLocalStorage(quickButtons.indexOf(element.parentElement.children[0].innerHTML));
             return;
         }
+        currentImage = 0;
         if (element.children.length === 0) {
             input.value = element.innerHTML;
             createImages(element.innerHTML);
