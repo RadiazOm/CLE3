@@ -19,7 +19,7 @@
 <div id="title" class="text-center"> </div>
 
 
-<div id="containerCanvas" class="flex-around align-center container">
+<div id="containerColorClear" class="flex-around align-center container">
     <div class="flex-column container">
         <!--kleuren kiezen-->
         <div>
@@ -43,9 +43,8 @@
             </div>
         </div>
     </div>
-
 <!--    save knop-->
-    <div class="container">
+    <div class="containerSaveFav">
         <div>
             <h2 class="title">Save knop</h2>
             <div class="box-blue">
@@ -56,7 +55,16 @@
             </div>
         </div>
     </div>
-
+    <div>
+        <h2 class="title">Save knop</h2>
+        <div class="box-blue">
+            <p>
+                <i class="fa-regular fa-magnifying-glass-plus" id="Communication"></i>
+            <div id="saveCanvas"></div>
+            </p>
+        </div>
+    </div>
+</div>
 </div>
 
 

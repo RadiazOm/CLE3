@@ -505,6 +505,23 @@ orange background, padding and border radius, white text color
 /* ---------------------------------- */
 /* End of Drawingtool specific classes */
 
+/* Drawingtoolmagazine specific classes */
+/* --------------------------- */
+/* Drawingtoolmagazine specific classes */
+
+.containerColorClear{
+    margin: 25px;
+
+}
+
+.containerSaveFav{
+
+}
+
+/* End of Drawingtoolmagazine specific classes */
+/* ---------------------------------- */
+/* End of Drawingtoolmagazine specific classes */
+
 
 /*modal*/
 .bg-modal{
