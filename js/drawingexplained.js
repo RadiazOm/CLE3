@@ -5,6 +5,7 @@ let title;
 let chooseColor;
 let clearCanvas;
 let saveCanvas;
+let favCanvas
 let modal;
 let modalClose;
 
@@ -14,6 +15,8 @@ function init() {
     chooseColor = document.getElementById("chooseColor");
     clearCanvas = document.getElementById("clearCanvas");
     saveCanvas = document.getElementById("saveCanvas");
+    favCanvas = document.getElementById("favCanvas");
+
 
     getJSONdata(`webservice/index.php?webservice=drawing`, FillHTML)
 
@@ -34,23 +37,23 @@ function FillHTML(e)
     // kleuren kiezen
     let chooseText = document.createElement("p");
     chooseText.innerHTML = data.chooseColor;
-    chooseColor.appendChild(generalText);
+    chooseColor.appendChild(chooseColor);
 
     // clear knop
     let clearText = document.createElement("p");
     clearText.innerHTML = data.clearCanvas;
-    clearCanvas.appendChild(popularText);
+    clearCanvas.appendChild(clearCanvas);
 
 
     // save knop
     let saveText = document.createElement("p");
     saveText.innerHTML = data.saveCanvas;
-    saveCanvas.appendChild(communicationText);
+    saveCanvas.appendChild(saveCanvas);
 
     // favoriete
     let favText = document.createElement("p");
     favText.innerHTML = data.favCanvas;
-    saveCanvas.appendChild(communicationText);
+    saveCanvas.appendChild(favCanvas);
 
 }
 
