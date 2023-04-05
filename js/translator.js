@@ -51,6 +51,7 @@ function configureData(e) {
 function buttonClickHandler() {
     let inputValue = input.value;
     output.innerHTML = "";
+    currentImage = 0;
     createImages(inputValue);
 }
 
