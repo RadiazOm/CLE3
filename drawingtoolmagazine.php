@@ -34,7 +34,6 @@
             <h2 class="title">Kleuren kiezen</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="chooseColor"></i>
                 <div id="chooseColor"></div>
                 </p>
             </div>
@@ -45,34 +44,33 @@
             <h2 class="title">Clear Knop</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="clearCanvas"></i>
                 <div id="clearCanvas"></div>
                 </p>
             </div>
         </div>
     </div>
 <!--    save knop-->
-    <div class="containerSaveFav">
+    <div class="flex-column container">
         <div>
-            <h2 class="title">Save knop</h2>
+            <div>
+                <h2 class="title">Save knop</h2>
+                <div class="box-blue">
+                    <p>
+                    <div id="saveCanvas"></div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="title">Fav knop</h2>
             <div class="box-blue">
                 <p>
-                    <i class="fa-regular fa-magnifying-glass-plus" id="saveCanvas"></i>
-                <div id="saveCanvas"></div>
+                <div id="favCanvas"></div>
                 </p>
             </div>
         </div>
     </div>
-<!--    <div>-->
-<!--        <h2 class="title">Fav knop</h2>-->
-<!--        <div class="box-blue">-->
-<!--            <p>-->
-<!--                <i class="fa-regular fa-magnifying-glass-plus" id="favCanvas"></i>-->
-<!--            <div id="favCanvas"></div>-->
-<!--            </p>-->
-<!--        </div>-->
-<!--    </div>-->
-</div>
+
 </div>
 
 

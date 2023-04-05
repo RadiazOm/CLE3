@@ -19,6 +19,10 @@ if ($_GET['webservice'] == 'info') {
 }
 
 //dieuwe's part
+if ($_GET['webservice'] == 'drawing') {
+    $data = getDrawingInfo();
+}
+
 //cry
 
 //oliviers part

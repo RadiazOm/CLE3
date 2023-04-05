@@ -10,17 +10,6 @@ let modalClose;
 
 
 function init() {
-
-
-
-    let iconClicker = document.getElementById("containerCanvas")
-    iconClicker.addEventListener("click", iconClickHandler);
-
-
-    let iconClose = document.getElementById('modal-close')
-    iconClose.addEventListener("click",iconCloseHandler);
-
-
     title = document.getElementById("title");
     chooseColor = document.getElementById("chooseColor");
     clearCanvas = document.getElementById("clearCanvas");
@@ -28,44 +17,7 @@ function init() {
 
     getJSONdata(`webservice/index.php?webservice=drawing`, FillHTML)
 
-
-
 }
-
-
-function iconClickHandler(e) {
-
-    console.log(e.target);
-    let target = e.target;
-
-    if (target.nodeName !== 'I'){
-        return;
-    }
-    modal = document.getElementById("popup-canvas");
-
-    modal.showModal()
-
-    fillModal(e.target.id)
-}
-
-function iconCloseHandler()
-{
-    modalClose = document.getElementById('modal-close');
-    modal.close()
-
-}
-
-function fillModal(id)
-{
-    if (id)
-    {
-
-    }
-}
-
-
-
-
 
 
 function FillHTML(e)
