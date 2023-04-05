@@ -511,6 +511,10 @@ orange background, padding and border radius, white text color
 }
 
 .containerSaveFav{
+    margin: 25px;
+
+    flex-direction: column;
+    flex-wrap: wrap;
 
 }
 

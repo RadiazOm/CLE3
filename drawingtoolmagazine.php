@@ -64,7 +64,7 @@
         </div>
     </div>
     <div>
-        <h2 class="title">Save knop</h2>
+        <h2 class="title">Fav knop</h2>
         <div class="box-blue">
             <p>
                 <i class="fa-regular fa-magnifying-glass-plus" id="Communication"></i>
