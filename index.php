@@ -1,4 +1,8 @@
+<?php
+// We need to use sessions, so you should always start sessions using the below code.
+session_start();
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +15,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="icon" type="image/x-icon" href="media/soundoff-sport-website-favicon-white.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Document</title>
     </head>
 
@@ -33,16 +38,16 @@
 <div class="container">
     <div class="icon">
         <div class="imgBx active" style="--i:1" data-id="content1">
-            <img src="media/img1.jpg">
+            <img src="media/lesson.jpg">
         </div>
         <div class="imgBx" style="--i:2" data-id="content2">
             <img src="media/img2.jpg">
         </div>
         <div class="imgBx" style="--i:3" data-id="content3">
-            <img src="media/img3.jpg">
+            <img src="media/sign-language.jpg">
         </div>
         <div class="imgBx" style="--i:4" data-id="content4">
-            <img src="media/img4.jpg">
+            <img src="media/drawing.jpg">
         </div>
     </div>
 
@@ -50,11 +55,11 @@
         <div class="contentBx active" id="content1">
             <div class="card">
                 <div class="imgBx1">
-                    <img src="media/img1.jpg">
+                    <img src="media/lesson.jpg">
                 </div>
                 <div class="textBx">
-                    <h2>Voetbal<br><span>test tekst</span></h2>
-                    <button><a href="sport.php">Button</a></button>
+                    <h2>algemene info<br><span>Ricky</span></h2>
+                    <button><a href="sport.php">klik hier</a></button>
                 </div>
             </div>
         </div>
@@ -65,8 +70,8 @@
                     <img src="media/img2.jpg">
                 </div>
                 <div class="textBx">
-                    <h2>Tekst bubbles<br><span>groeps sport</span></h2>
-                    <button><a href="bubbles-index.php">Button</a></button>
+                    <h2>Tekst bubbles<br><span>Olivier</span></h2>
+                    <button><a href="bubbles-index.php">klik hier</a></button>
                 </div>
             </div>
         </div>
@@ -74,11 +79,11 @@
         <div class="contentBx" id="content3">
             <div class="card">
                 <div class="imgBx1">
-                    <img src="media/img3.jpg">
+                    <img src="media/sign-language.jpg">
                 </div>
                 <div class="textBx">
-                    <h2>Denk sport<br><span>test tekst</span></h2>
-                    <button><a href="translator.php">Button</a></button>
+                    <h2>translator<br><span>Jeffery</span></h2>
+                    <button><a href="translator.php">klik hier</a></button>
                 </div>
             </div>
         </div>
@@ -86,23 +91,35 @@
         <div class="contentBx" id="content4">
             <div class="card">
                 <div class="imgBx1">
-                    <img src="media/img4.jpg">
+                    <img src="media/drawing.jpg">
                 </div>
                 <div class="textBx">
-                    <h2>Teken- en notitie hulpmiddel<br><span>test tekst</span></h2>
-                    <button><a href="drawingtool.php">Button</a></button>
+                    <h2>Teken- en notitie hulpmiddel<br><span>Dieuwe</span></h2>
+                    <button><a href="drawingtool.php">klik hier</a></button>
                 </div>
             </div>
         </div>
 
     </div>
 
-
 </div>
 
 <div class="login-container">
-    <a href="login_index.php">Login</a>
+    <?php
+    if (!isset($_SESSION['loggedin'])) {
+        echo '<a href="login_index.php">Login</a>';;
+    } else {
+        echo '<div class="dropdown">
+  <a class="dropbtn">User</a>
+  <div class="dropdown-content">
+    <a href="profile.php">profiel</a>
+    <a href="php/logout.php">log uit</a>
+  </div>';
+    }
+    ?>
+
 </div>
+
 <script src="js/script.js"></script>
 
 </body>

@@ -7,6 +7,29 @@ let list
 let bubbleItems
 let currentBubble;
 
+function getJsonData(apiUrl, succesHandler) {
+    fetch(apiUrl)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+            })
+        .then(succesHandler)
+        .catch(ajaxErrorHandler)
+}
+
+function bubblesDataConfig(data){
+    console.log(data)
+    for (const row of data){
+        addBubbleItem(row.content);
+    }
+}
+
+function ajaxErrorHandler() {
+
+}
+
 function init(){
 
     form = document.getElementById('modal-form');
@@ -14,6 +37,18 @@ function init(){
     bubbleContainer = document.getElementById('bubble-container');
     list = document.getElementById('delete');
     let closeButton = document.querySelector('.close');
+
+document.getElementById('bubble-container').addEventListener('click',
+    function () {
+        document.querySelector('.bg-modal').style.display = 'flex'
+    });
+
+document.querySelector('.close').addEventListener('click',
+    function () {
+        document.querySelector('.bg-modal').style.display = 'none'
+    })
+
+getJsonData('webservice/index.php?webservice=bubbles', bubblesDataConfig);
 
     // save data in localstorage
     let bubbleItemString = localStorage.getItem('bubbleItems');
@@ -59,13 +94,14 @@ function modalOpen(e){
 function modalClose() {
     document.querySelector('.bg-modal').style.display = 'none';
 }
-
+//
 function formSubmitHandler(e) {
     e.preventDefault();
     console.log(document.querySelector('.modal-submit').style.display)
-    if (document.querySelector('.modal-submit').style.display !== 'flex'){
+    if (document.querySelector('.modal-submit').style.display !== 'flex') {
         return;
     }
+
     let inputValue;
     console.log(inputField.value);
     if (inputField.value !== '') {
@@ -79,30 +115,30 @@ function formSubmitHandler(e) {
     }
 }
 
-function addBubbleItem(e){
-    let bubble = document.createElement('div');
-    bubble.classList.add('bubble', 'bubble-bottom-left');
-    bubble.dataset.name = e
-    let bubbleText = document.createElement('p')
-    bubbleText.innerHTML = e;
-    bubble.appendChild(bubbleText)
-    bubbleContainer.appendChild(bubble);
-    console.log('iets');
-}
-
-function bubbleClickHandler(e) {
-    for (const bubble of bubbleContainer.children) {
-
+    function addBubbleItem(e) {
+        let bubble = document.createElement('div');
+        bubble.classList.add('bubble', 'bubble-bottom-left');
+        bubble.dataset.name = e
+        let bubbleText = document.createElement('p')
+        bubbleText.innerHTML = e;
+        bubble.appendChild(bubbleText)
+        bubbleContainer.appendChild(bubble);
+        console.log('iets');
     }
 
-    // remove from array
-    console.log(currentBubble);
-    let itemPosition = bubbleItems.indexOf(currentBubble);
-    console.log(itemPosition)
-    bubbleItems.splice(itemPosition ,1);
-    // update local storage
-    localStorage.setItem('bubbleItems', JSON.stringify(bubbleItems))
+    function bubbleClickHandler(e) {
+        for (const bubble of bubbleContainer.children) {
+
+        }
+
+        // remove from array
+        console.log(currentBubble);
+        let itemPosition = bubbleItems.indexOf(currentBubble);
+        console.log(itemPosition)
+        bubbleItems.splice(itemPosition, 1);
+        // update local storage
+        localStorage.setItem('bubbleItems', JSON.stringify(bubbleItems))
         // remove from html
-    currentBubble.remove();
-    console.log(bubbleItems)
-}
+        currentBubble.remove();
+        console.log(bubbleItems)
+    }

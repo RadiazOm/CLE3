@@ -96,9 +96,6 @@ function showSigns() {
     }
     currentImage++;
 
-    // output.children[currentImage].classList.add('invisible');
-    // output.children[currentImage + 1].classList.remove('invisible');
-
     if (gif === true) {
         timeOutId = setTimeout(showSigns, 2100 - speedSlider.value);
     }

@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <title>Visual communication tool</title>
+    <script src="js/nav.js"></script>
 </head>
 <body>
 <nav class="navbar">
@@ -17,12 +18,13 @@
         <a href="translator.php"><img src="media/img2.jpg" alt="" class="img-link"></a>
         <a href="drawingtool.html"><img src="media/img3.jpg" alt="" class="img-link"></a>
         <a href="sport.php"><img src="media/img4.jpg" alt="" class="img-link"></a>
+        <a href="index.php"><img src="media/soundoff-sport-website-favicon-white.png" class="img-link" alt=""></a>
     </div>
 </nav>
 
 <h1 class="text-2 text-center">Notitie tool</h1>
-
-<div id="wrappercanvas"><canvas id="canvas"></canvas></div>
+<div class="pocket">
+<div class="wrappercanvas"><canvas id="canvas"></canvas></div>
 <div class="colornav">
     <!-- We will be accessing the data-color in JavaScript -->
     <div class="color" data-color="#ffffff"></div>
@@ -34,6 +36,44 @@
     <button class="save drawing-button">save</button>
     <button class="fav drawing-button" id="fav">favorite</button>
 </div>
+    <div class="otherdrawingtool">
+        <!-- We will be accessing the data-color in JavaScript -->
+        <button class="explained drawing-button"><a href="drawingtoolmagazine.php">Klik hier voor meer uitleg over het tekenhulpmiddel</button>
+    </div>
+</div>
 <script src="js/canvas.js"></script>
+<footer class="footer">
+    <div class="container flex-around">
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/fredsjr" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Olivier</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/soapinmysight" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Dieuwe</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/RadiazOm" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Jeffrey</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/ikeetkip" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Ricky</h3>
+        </div>
+    </div>
+    <div class="text-center text-4">
+        <span>
+            © Jeffrey van Otterloo, Dieuwe van Rijnswou, Ricky Ng, Olivier Schell
+        </span>
+    </div>
+</footer>
 </body>
 </html>

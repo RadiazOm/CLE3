@@ -58,7 +58,14 @@ h1{
 }
 
 /*text*/
-
+.textbox{
+    margin: 100px;
+    padding: 50px;
+    color: #ffffff;
+    background-color: #68418E;
+    box-shadow: -10px -10px #533175;
+    font-size: 2em;
+}
 
 /*cards*/
 
@@ -220,6 +227,7 @@ h1{
     font-size: 1.5em;
     font-weight: 500;
     color: #6699CC;
+    margin-bottom: 10px;
 }
 
 .card .card-content .card-details p{
