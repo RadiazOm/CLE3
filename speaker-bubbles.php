@@ -1,7 +1,6 @@
 <?php
 
 include_once "webservice/includes/dbh_include.php";
-require_once "bubbles.php";
 
 
 if (!isset($_SESSION['loggedin'])) {
@@ -63,14 +62,26 @@ if (isset($_POST['submit'])) {
   <link rel="stylesheet" href="css/bubbles-index-style.css">
   <link rel="icon" type="image/x-icon" href="media/soundoff-sport-website-favicon-white.png">
   <script src="js/bubbles.js"></script>
+    <script src="js/nav.js" ></script>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
 
+<nav class="navbar">
+    <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo" id="nav-button">
+    <div class="nav-popup box-orange" id="nav-popup">
+        <a href="bubbles-index.php"><img src="media/bubbleIcon.png" alt="" class="img-link"></a>
+        <a href="translator.php"><img src="media/signIcon.png" alt="" class="img-link"></a>
+        <a href="drawingtool.php"><img src="media/drawIcon.png" alt="" class="img-link"></a>
+        <a href="sport.php"><img src="media/articleIcon.png" alt="" class="img-link"></a>
+        <a href="index.php"><img src="media/soundoff-sport-website-favicon-white.png" class="img-link" alt=""></a>
+    </div>
+</nav>
+
+
 <main>
-
-
     <div class="bubble-container" id="bubble-container">
         <div class="bubble bubble-bottom-left" id="bubble-create">
             <a href="#"><i class="fa-solid fa-plus"></i></a>

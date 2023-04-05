@@ -48,6 +48,7 @@ body {
 
 /* styling for the nav popup */
 .nav-popup {
+    z-index: 1;
     position: absolute;
     top: 140px;
     width: unset!important;

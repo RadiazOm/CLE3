@@ -366,9 +366,18 @@ nav {
     border-radius: 40px;
     padding: 24px;
     text-align: center;
-    color: #000;
+    color: black;
     position: relative;
 }
+
+.bubble p {
+    color: black;
+}
+
+.bubble i {
+    color: black;
+}
+
 
 .bubble-bottom-left:before {
     content: "";
@@ -406,12 +415,14 @@ input{
     width: 50%;
     display: block;
     margin: 15px auto;
+    color: black;
 }
 .close{
     position: absolute;
     top: 0;
     right: 14px;
     font-size: 42px;
+    color: black;
     transform: rotate(45deg);
     cursor: pointer;
 }
