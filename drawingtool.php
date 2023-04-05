@@ -36,7 +36,44 @@
     <button class="save drawing-button">save</button>
     <button class="fav drawing-button" id="fav">favorite</button>
 </div>
+    <div class="otherdrawingtool">
+        <!-- We will be accessing the data-color in JavaScript -->
+        <button class="explained drawing-button"><a href="drawingtoolmagazine.php">Klik hier voor meer uitleg over het tekenhulpmiddel</button>
+    </div>
 </div>
 <script src="js/canvas.js"></script>
+<footer class="footer">
+    <div class="container flex-around">
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/fredsjr" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Olivier</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/soapinmysight" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Dieuwe</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/RadiazOm" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Jeffrey</h3>
+        </div>
+        <div class="box-orange align-center flex-wrap eight">
+            <a href="https://github.com/ikeetkip" target="_blank">
+                <img src="media/github.png" alt="" class="logo">
+            </a>
+            <h3>Ricky</h3>
+        </div>
+    </div>
+    <div class="text-center text-4">
+        <span>
+            © Jeffrey van Otterloo, Dieuwe van Rijnswou, Ricky Ng, Olivier Schell
+        </span>
+    </div>
+</footer>
 </body>
 </html>

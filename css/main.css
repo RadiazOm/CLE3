@@ -416,6 +416,16 @@ canvas {
     padding: 0;
 }
 
+/*dit is een wrapper voor alle overige buttons*/
+.otherdrawingtool{
+    height: 50px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /*Style the color navigation bar with
 a fixed position at the top of the page,
 centered horizontally
