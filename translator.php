@@ -26,6 +26,7 @@
 
 <h1 class="text-2 text-center">Vertaler</h1>
 
+
 <div class="flex-between container">
     <div class="box-blue container">
         <textarea rows="10" placeholder="Enter text here" id="input" class="field-blue input-field"></textarea>

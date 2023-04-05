@@ -149,11 +149,17 @@ function createImages(sentence) {
             let space = document.createElement('div');
             space.classList.add('space');
             output.appendChild(space);
+            if (gif === true) {
+                space.classList.add('invisible')
+            }
         } else if (data.hasOwnProperty(letter)) {
             let img = document.createElement('img');
             img.src = `media/signs/${data[letter]}`;
             img.classList.add('sign');
             output.appendChild(img);
+            if (gif === true) {
+                img.classList.add('invisible')
+            }
         } else {
             output.innerHTML = 'Input has unknown character, please remove it';
         }
@@ -196,5 +202,5 @@ function ajaxErrorHandler(data)
     let error = document.createElement('div');
     error.classList.add('error');
     error.innerHTML = 'Er is helaas iets fout gegaan met de API, probeer het later opnieuw';
-    errorMessage.before(error);
+    output.appendChild(error);
 }

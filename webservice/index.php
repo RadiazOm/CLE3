@@ -26,6 +26,7 @@ if ($_GET['webservice'] == 'drawing') {
 //    } else {
 //        $data = getDishDetails($_GET['id']);
 //    }
+    }
 
 //Set the header & output JSON so the client will know what to expect.
     header("Content-Type: application/json");
