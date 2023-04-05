@@ -19,22 +19,14 @@ if (!isset($_SESSION['loggedin'])) {
 </head>
 <body>
 
-<nav>
-    <div class="rounded-edges" id="nav-button">
-        <div class="circle">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-    <div id="popup">
-        <div class="big-circle">
-            <a href="page1" class="circle-link"></a>
-            <a href="page1" class="circle-link"></a>
-            <a href="page1" class="circle-link"></a>
-            <a href="page1" class="circle-link"></a>
-        </div>
+<nav class="navbar">
+    <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo" id="nav-button">
+    <div class="nav-popup box-orange" id="nav-popup">
+        <a href="bubbles-index.php"><img src="media/bubbleIcon.png" alt="" class="img-link"></a>
+        <a href="translator.php"><img src="media/signIcon.png" alt="" class="img-link"></a>
+        <a href="drawingtool.php"><img src="media/drawIcon.png" alt="" class="img-link"></a>
+        <a href="sport.php"><img src="media/articleIcon.png" alt="" class="img-link"></a>
+        <a href="index.php"><img src="media/soundoff-sport-website-favicon-white.png" class="img-link" alt=""></a>
     </div>
 </nav>
 
