@@ -48,6 +48,7 @@ body {
 
 /* styling for the nav popup */
 .nav-popup {
+    z-index: 1;
     position: absolute;
     top: 140px;
     width: unset!important;
@@ -63,9 +64,10 @@ body {
 
 /* good image button styling */
 .img-link {
-    object-fit: cover;
+    object-fit: contain;
     width: 100px;
     height: auto;
+    display: flex;
     transform: scale(0.8);
 }
 
@@ -74,6 +76,7 @@ body {
     border: white 4px solid;
     border-radius: 50%;
     overflow: hidden;
+    display: flex;
     width: 100px;
     height: 100px;
 }
@@ -108,13 +111,13 @@ body {
 /* modal shit */
 .modal {
     opacity: 0;
-    transition: all 0.7s ease;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     border: none;
     border-radius: 10px;
     padding: 30px;
+    margin: auto;
 }
 
 .modal[open] {
@@ -511,6 +514,10 @@ orange background, padding and border radius, white text color
 }
 
 .containerSaveFav{
+    margin: 25px;
+
+    flex-direction: column;
+    flex-wrap: wrap;
 
 }
 

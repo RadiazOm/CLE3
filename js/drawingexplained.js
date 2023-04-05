@@ -26,7 +26,7 @@ function init() {
     clearCanvas = document.getElementById("clearCanvas");
     saveCanvas = document.getElementById("saveCanvas");
 
-    getJSONdata(`webservice/index.php?webservice=info`, FillHTML)
+    getJSONdata(`webservice/index.php?webservice=drawing`, FillHTML)
 
 
 
@@ -80,24 +80,24 @@ function FillHTML(e)
     title.appendChild(h1);
 
     // kleuren kiezen
-    let generalText = document.createElement("p");
-    generalText.innerHTML = data.chooseColor;
+    let chooseText = document.createElement("p");
+    chooseText.innerHTML = data.chooseColor;
     chooseColor.appendChild(generalText);
 
     // clear knop
-    let popularText = document.createElement("p");
-    popularText.innerHTML = data.clearCanvas;
+    let clearText = document.createElement("p");
+    clearText.innerHTML = data.clearCanvas;
     clearCanvas.appendChild(popularText);
 
 
     // save knop
-    let communicationText = document.createElement("p");
-    communicationText.innerHTML = data.saveCanvas;
+    let saveText = document.createElement("p");
+    saveText.innerHTML = data.saveCanvas;
     saveCanvas.appendChild(communicationText);
 
     // favoriete
-    let communicationText = document.createElement("p");
-    communicationText.innerHTML = data.favCanvas;
+    let favText = document.createElement("p");
+    favText.innerHTML = data.favCanvas;
     saveCanvas.appendChild(communicationText);
 
 }
