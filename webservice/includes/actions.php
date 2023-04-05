@@ -52,7 +52,11 @@ function getSportInfo() {
 function getBubblesInfo(){
     // pak alle data uit de user tabel
     require_once "dbh_include.php";
-    $query ="SELECT * FROM bubbles";
+
+
+    $id = $_SESSION['id'];
+
+    $query ="SELECT * FROM bubbles WHERE user_id = '$id'";
     $result = mysqli_query($con, $query)
     or die('ERROR: ' . mysqli_error($con). 'with query ' . $query);
 

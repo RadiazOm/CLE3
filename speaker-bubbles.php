@@ -2,6 +2,29 @@
 
 include_once "webservice/includes/dbh_include.php";
 require_once "bubbles.php";
+
+
+if (!isset($_SESSION['loggedin'])) {
+    header('Location: login_index.php');
+    exit;
+}
+
+
+if (isset($_POST['submit'])) {
+
+    // pak alle values
+    $content = $_POST['content'];
+    $userid = $_SESSION['id'];
+
+    $sql = "INSERT INTO bubbles(content, user_id)
+            VALUES ('$content', '$userid' )";
+    mysqli_query($con, $sql);
+    echo $sql;
+
+    header("location: bubble_confirm.php");
+}
+
+
 //// pak alle data uit de user tabel
 //$query ="SELECT * FROM user";
 //$result = mysqli_query($con, $query)
@@ -47,11 +70,13 @@ require_once "bubbles.php";
 
 <main>
 
+
     <div class="bubble-container" id="bubble-container">
         <div class="bubble bubble-bottom-left" id="bubble-create">
             <a href="#"><i class="fa-solid fa-plus"></i></a>
         </div>
     </div>
+
     <!--    modal    -->
     <div class="bg-modal" >
         <div class="modal-content">
@@ -61,6 +86,9 @@ require_once "bubbles.php";
             <form action="" method="post" id="modal-form" class="form">
                 <input type="text" name="content" id="input-field" placeholder="Vul hier tekst in">
                 <input type="submit" name="submit" value="Submit" id="submit" class="modal-submit">
+            </form>
+            <form action="php/delete_bubble.php" method="post">
+                <input type="hidden" name="id" value="">
                 <input type="submit" value="delete" id="delete" class="modal-delete">
             </form>
         </div>

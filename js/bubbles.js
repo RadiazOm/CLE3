@@ -22,7 +22,7 @@ function getJsonData(apiUrl, succesHandler) {
 function bubblesDataConfig(data){
     console.log(data)
     for (const row of data){
-        addBubbleItem(row.content);
+        addBubbleItem(row.content, row.id);
     }
 }
 
@@ -48,6 +48,8 @@ document.querySelector('.close').addEventListener('click',
         document.querySelector('.bg-modal').style.display = 'none'
     })
 
+    console.log(sessionStorage.getItem('id'));
+
 getJsonData('webservice/index.php?webservice=bubbles', bubblesDataConfig);
 
     // save data in localstorage
@@ -60,7 +62,7 @@ getJsonData('webservice/index.php?webservice=bubbles', bubblesDataConfig);
         }
     }
 
-    form.addEventListener('submit', formSubmitHandler);
+    // form.addEventListener('submit', formSubmitHandler);
     closeButton.addEventListener('click', modalClose);
     bubbleContainer.addEventListener('click', modalOpen);
     list.addEventListener('click', bubbleClickHandler);
@@ -69,6 +71,7 @@ getJsonData('webservice/index.php?webservice=bubbles', bubblesDataConfig);
 function modalOpen(e){
     let element = e.target;
     currentBubble = element.parentElement.dataset.name;
+    currentId = element.parentElement.dataset.id;
     console.log(element.parentElement.dataset.name)
     console.log(currentBubble);
     if (!element.classList.contains('bubble') && element.nodeName !== 'P' && element.nodeName !== 'A') {
@@ -119,6 +122,7 @@ function formSubmitHandler(e) {
         let bubble = document.createElement('div');
         bubble.classList.add('bubble', 'bubble-bottom-left');
         bubble.dataset.name = e
+        bubble.dataset.id = e
         let bubbleText = document.createElement('p')
         bubbleText.innerHTML = e;
         bubble.appendChild(bubbleText)
