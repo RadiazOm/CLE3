@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <script src="js/drawingexplained.js"></script>
+    <script src="js/nav.js"></script>
 </head>
 <body>
 
 <nav class="navbar">
-    <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo">
+    <img src="media/soundoff-sport-website-favicon-white.png" alt="" class="logo" id="nav-button">
+    <div class="nav-popup box-orange" id="nav-popup">
+        <a href="bubbles-index.php"><img src="media/bubbleIcon.png" alt="" class="img-link"></a>
+        <a href="translator.php"><img src="media/signIcon.png" alt="" class="img-link"></a>
+        <a href="drawingtool.php"><img src="media/drawIcon.png" alt="" class="img-link"></a>
+        <a href="sport.php"><img src="media/articleIcon.png" alt="" class="img-link"></a>
+        <a href="index.php"><img src="media/soundoff-sport-website-favicon-white.png" class="img-link" alt=""></a>
+    </div>
 </nav>
 
 <!--    Title    -->
