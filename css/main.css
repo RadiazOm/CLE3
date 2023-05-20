@@ -478,7 +478,7 @@ based on their respective nth-child positions*/
     background-color: #283A71;
 }
 
-/*Style each button (save, clear, and add to favorite) with
+/*Style each button (download, clear, and add to favorite) with
 orange background, padding and border radius, white text color
 */
 .drawing-button{
@@ -490,8 +490,8 @@ orange background, padding and border radius, white text color
     color: #fff;
 }
 
-/*so i can change the color of the save button quickly if i want to*/
-.save{
+/*so i can change the color of the download button quickly if i want to*/
+.download{
     background-color: #CC7B2B;
 }
 
@@ -513,7 +513,7 @@ orange background, padding and border radius, white text color
 
 }
 
-.containerSaveFav{
+.containerDownloadFav{
     margin: 25px;
 
     flex-direction: column;

@@ -19,6 +19,7 @@ window.addEventListener('load', init);
 let canvas;
 let canvascontext;
 let favButton;
+let saveButton;
 //declare variable so the webapplication knows when & when not to draw
 let draw = false
 //declare prevX and prevY variables, which are used to keep track of (to hold/store) the previous mouse positions,
@@ -26,13 +27,13 @@ let draw = false
 let prevX = null
 let prevY = null
 
-function init()
-{
+function init() {
 //The canvas variabele references the HTML canvas element with the ID "canvas"
     canvas = document.getElementById("canvas")
     favButton = document.getElementById('fav')
-
+    saveButton = document.getElementById('save')
     favButton.addEventListener('click', favClickHandler)
+    saveButton.addEventListener('click', saveClickHandler)
 
 // Set the canvas height and width to the height and width of the browser window
     canvas.height = window.innerHeight /2
@@ -92,20 +93,20 @@ if (localStorage.getItem('imgData') !== null) {
     })
 
 //Next piece of code is for saving drawing as image
-// find the first element with class name "save" and store it in saveBtn variable
-    let saveBtn = document.querySelector(".save")
-// add a click event listener to the saveBtn
-    saveBtn.addEventListener("click", () => {
+// find the first element with class name "download" and store it in downloadBtn variable
+    let downloadBtn = document.querySelector(".download")
+// add a click event listener to the downloadBtn
+    downloadBtn.addEventListener("click", () => {
         // get the data URL of the canvas element and store it in data variable
         let data = canvas.toDataURL("imag/png")
-        // create a new <a> element and store it in a variable named 'saveable'
-        let saveable = document.createElement("a")
-        // set the 'href' attribute of the 'saveable' element to the data URL
-        saveable.href = data
-        // set the 'download' attribute of the 'saveable' element to "drawing.png"
-        saveable.download = "drawing.png"
-        // simulate a click on the 'saveable' element to download the image file
-        saveable.click()
+        // create a new <a> element and store it in a variable named 'downloadable'
+        let downloadable = document.createElement("a")
+        // set the 'href' attribute of the 'downloadable' element to the data URL
+        downloadable.href = data
+        // set the 'download' attribute of the 'downloadable' element to "drawing.png"
+        downloadable.download = "drawing.png"
+        // simulate a click on the 'downloadable' element to download the image file
+        downloadable.click()
     })
 
 
@@ -122,7 +123,14 @@ function favClickHandler(){
     let imgData = getBase64Image(canvasLocalStorage);
     localStorage.setItem("imgData", imgData);
 }
+// whenever the save button is clicked save the current input into its own quick button
+function saveButtonClickHandler() {
+    let inputValue = input.value;
 
+    console.log(inputValue);
+    addItemToLocalStorage(inputValue);
+    createQuickButton(inputValue);
+}
 
 // Set draw to true when mouse is pressed
 window.addEventListener("mousedown", (e) => draw = true)
