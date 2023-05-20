@@ -57,8 +57,8 @@ function getDrawingInfo() {
         "chooseColor" => "Met de kleuren in de rondjes rechts onderin kan je de kleur kiezen waar je mee wilt tekenen. Als je op een kleur klikt, is je brush voortaan die kleur totdat je op een andere klikt.",
     // clear knop
         "clearCanvas" => "Met de clear-knop kan je je canvas leeg maken. Als je hier op drukt, verdwijnt alles dat je hebt getekent en kan je helemaal overnieuw beginnen.",
-    // save knop
-        "saveCanvas" => "Met de save-knop kan je je notitie/tekening opslaan. Je slaat dan een png bestand op op je apparaat. Zo gaat je kunstwerk nooit meer weg!",
+    // download knop
+        "downloadCanvas" => "Met de download-knop kan je je notitie/tekening opslaan. Je slaat dan een png bestand op op je apparaat. Zo gaat je kunstwerk nooit meer weg!",
     //favoriet knop
         "favCanvas" => "Als je op de favoriet knop drukt, blijft je pagina hetzelfde als je hem herlaadt. Op deze manier ben je niet oppeens heel je tekening kwijt, terwijl je er nog mee bezig bent!",
 

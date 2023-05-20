@@ -23,23 +23,43 @@
 </nav>
 
 <h1 class="text-2 text-center">Notitie tool</h1>
+
+<!-- pocket for main part of webpage
+(heb het zo genoemd zodat ik het kan aanpassen in de css zonder de anderen hun css aan te passen) -->
 <div class="pocket">
-<div class="wrappercanvas"><canvas id="canvas"></canvas></div>
-<div class="colornav">
-    <!-- We will be accessing the data-color in JavaScript -->
-    <div class="color" data-color="#ffffff"></div>
-    <div class="color" data-color="#3FAEFA"></div>
-    <div class="color" data-color="#CC7B2B"></div>
-    <div class="color" data-color="#FDC601"></div>
-    <div class="color" data-color="#383961"></div>
-    <button class="clear drawing-button">clear</button>
-    <button class="save drawing-button">save</button>
-    <button class="fav drawing-button" id="fav">favorite</button>
+
+    <!-- canvas in wrapper -->
+    <div class="wrappercanvas"><canvas id="canvas"></canvas></div>
+
+    <!-- class for navbar for picking color to draw with -->
+    <div class="colornav">
+        <!-- color buttons -->
+        <!-- We will be accessing the data-color in JavaScript -->
+        <div class="color" data-color="#ffffff"></div>
+        <div class="color" data-color="#3FAEFA"></div>
+        <div class="color" data-color="#CC7B2B"></div>
+        <div class="color" data-color="#FDC601"></div>
+        <div class="color" data-color="#383961"></div>
+            <!-- other buttons -->
+        <button class="clear drawing-button">clear</button>
+        <button class="download drawing-button">download</button>
+        <button class="fav drawing-button" id="fav">favorite</button>
+        <button class="fav drawing-button" id="save">save</button>
+    </div>
+
+    <!-- button to get to the page where the drawing tool is explained -->
+    <div class="otherdrawingtool">
+        <button class="explained drawing-button"><a href="drawingtoolmagazine.php">Klik hier voor meer uitleg over het tekenhulpmiddel</button>
+    </div>
+
+    <!-- ruimte voor tekeningen opslaan op web ipv device -->
+    <h2 class="text-2 text-center">Opgeslagen tekening</h2>
+    <div class="wrappercanvas"><canvas id="canvas"></canvas></div>
+
 </div>
-<!--    <div class="otherdrawingtool">-->
-<!--        <button class="explained drawing-button"><a href="drawingtoolmagazine.php">Klik hier voor meer uitleg over het tekenhulpmiddel</button>-->
-<!--    </div>-->
-</div>
+
+
+
 <script src="js/canvas.js"></script>
 <footer class="footer">
     <div class="container flex-around">
