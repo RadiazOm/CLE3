@@ -547,6 +547,10 @@ orange background, padding and border radius, white text color
     padding: 20px;
     position: relative;
 }
+
+.modal-content p {
+    color: black!important;
+}
 input{
     width: 50%;
     display: block;

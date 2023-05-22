@@ -59,7 +59,6 @@ function buttonClickHandler() {
 function saveButtonClickHandler() {
     let inputValue = input.value;
 
-    console.log(inputValue);
     addItemToLocalStorage(inputValue);
     createQuickButton(inputValue);
 }

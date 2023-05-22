@@ -42,7 +42,7 @@ function iconClickHandler(e) {
         return;
     }
     modalSport = document.getElementById("popup-sport");
-    clickedIcon = e.target.dataset.id;
+    clickedIcon = target.dataset.id;
     getJSONdata(`webservice/index.php?webservice=info&id=1`, fillModal)
 
     modalSport.showModal()
@@ -53,22 +53,20 @@ function iconCloseHandler()
 {
     modalClose = document.getElementById('modal-close');
     modalSport.close()
-
 }
 
 function fillModal(data) {
-   modalSport.children[0].innerHTML = data[clickedIcon];
-
+   modalSport.children[0].innerHTML = '';
+   let p = document.createElement('p');
+   p.innerHTML = data[clickedIcon];
+   p.classList.add()
+   modalSport.children[0].appendChild(p);
 }
 
 
 
-function FillHTML(e)
+function FillHTML(data)
 {
-
-    data = e;
-    console.log(data);
-
     // title
     let h1 = document.createElement("h1");
     h1.innerHTML = data.mainTitle;
